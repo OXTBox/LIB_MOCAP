@@ -1,0 +1,23 @@
+{
+ "frames": 237,
+ "fps": 60,
+ "seconds": 3.95,
+ "kind": "in place",
+ "root_path_m": 0.283,
+ "travel_m_per_s": 0.027,
+ "turn_deg": 32,
+ "floor_m": 0.025,
+ "jitter_pct": 39.8,
+ "foot_slide": 0.022,
+ "loop_gap_m": 0.339,
+ "score": 79,
+ "issues": [
+  "does not loop (34 cm mean gap between last and first pose)"
+ ],
+ "name": "Animazoo_stand_push",
+ "source": "input/BVH/Animazoo/stand push.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.01001,
+ "joints": 24
+}

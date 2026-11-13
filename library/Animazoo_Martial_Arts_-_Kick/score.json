@@ -1,0 +1,23 @@
+{
+ "frames": 363,
+ "fps": 120,
+ "seconds": 3.02,
+ "kind": "in place",
+ "root_path_m": 2.787,
+ "travel_m_per_s": 0.228,
+ "turn_deg": 11,
+ "floor_m": 0.01,
+ "jitter_pct": 0.2,
+ "foot_slide": 0.13,
+ "loop_gap_m": 0.533,
+ "score": 72,
+ "issues": [
+  "does not loop (53 cm mean gap between last and first pose)"
+ ],
+ "name": "Animazoo_Martial_Arts_-_Kick",
+ "source": "input/BVH/Animazoo/Martial Arts - Kick.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.01024,
+ "joints": 24
+}

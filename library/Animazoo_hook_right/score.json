@@ -1,0 +1,21 @@
+{
+ "frames": 176,
+ "fps": 60,
+ "seconds": 2.93,
+ "kind": "in place",
+ "root_path_m": 0.241,
+ "travel_m_per_s": 0.008,
+ "turn_deg": 0,
+ "floor_m": 0.025,
+ "jitter_pct": 43.6,
+ "foot_slide": 0.024,
+ "loop_gap_m": 0.042,
+ "score": 97,
+ "issues": [],
+ "name": "Animazoo_hook_right",
+ "source": "input/BVH/Animazoo/hook right.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.01001,
+ "joints": 24
+}

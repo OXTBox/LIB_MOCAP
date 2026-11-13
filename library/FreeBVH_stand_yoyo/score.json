@@ -1,0 +1,25 @@
+{
+ "frames": 200,
+ "fps": 30,
+ "seconds": 6.67,
+ "kind": "in place",
+ "root_path_m": 0.219,
+ "travel_m_per_s": 0.005,
+ "turn_deg": 2,
+ "floor_m": 0.077,
+ "jitter_pct": 53.8,
+ "foot_slide": 0.003,
+ "loop_gap_m": 0.025,
+ "score": 88,
+ "issues": [
+  "no root motion (hips locked: plays in place)",
+  "feet float 8 cm above the floor (stick is grounded)",
+  "jittery (54% noise)"
+ ],
+ "name": "FreeBVH_stand_yoyo",
+ "source": "input/BVH/FreeBVH/stand_yoyo.BVH",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22
+}

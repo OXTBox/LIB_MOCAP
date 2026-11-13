@@ -1,0 +1,23 @@
+{
+ "frames": 298,
+ "fps": 60,
+ "seconds": 4.97,
+ "kind": "in place",
+ "root_path_m": 1.158,
+ "travel_m_per_s": 0.013,
+ "turn_deg": -12,
+ "floor_m": 0.025,
+ "jitter_pct": 31.9,
+ "foot_slide": 0.052,
+ "loop_gap_m": 0.116,
+ "score": 84,
+ "issues": [
+  "does not loop (12 cm mean gap between last and first pose)"
+ ],
+ "name": "Animazoo_combo_left_southport",
+ "source": "input/BVH/Animazoo/combo left southport.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.01001,
+ "joints": 24
+}

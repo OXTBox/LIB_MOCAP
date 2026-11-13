@@ -1,0 +1,24 @@
+{
+ "frames": 347,
+ "fps": 60,
+ "seconds": 5.78,
+ "kind": "in place",
+ "root_path_m": 0.311,
+ "travel_m_per_s": 0.045,
+ "turn_deg": 5,
+ "floor_m": 0.025,
+ "jitter_pct": 36.9,
+ "foot_slide": 0.006,
+ "loop_gap_m": 0.244,
+ "score": 80,
+ "issues": [
+  "no root motion (hips locked: plays in place)",
+  "does not loop (24 cm mean gap between last and first pose)"
+ ],
+ "name": "Animazoo_lean_back_arms_folded",
+ "source": "input/BVH/Animazoo/lean back arms folded.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.01001,
+ "joints": 24
+}

@@ -1,0 +1,30 @@
+{
+ "frames": 405,
+ "fps": 60,
+ "seconds": 6.75,
+ "kind": "locomotion",
+ "root_path_m": 4.021,
+ "travel_m_per_s": 0.582,
+ "turn_deg": -17,
+ "floor_m": 0.025,
+ "jitter_pct": 55.9,
+ "foot_slide": 0.043,
+ "loop_gap_m": 0.04,
+ "score": 87,
+ "issues": [
+  "jittery (56% noise)"
+ ],
+ "name": "Animazoo_walking_waving_behind",
+ "source": "input/BVH/Animazoo/walking waving behind.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.01001,
+ "joints": 24,
+ "cycle": {
+  "from": 110,
+  "to": 146,
+  "seconds": 1.23,
+  "gap_m": 0.026,
+  "travel_m_per_s": 1.093
+ }
+}

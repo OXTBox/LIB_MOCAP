@@ -1,0 +1,25 @@
+{
+ "frames": 148,
+ "fps": 30,
+ "seconds": 4.93,
+ "kind": "turn",
+ "root_path_m": 1.4,
+ "travel_m_per_s": 0.121,
+ "turn_deg": 166,
+ "floor_m": 0.016,
+ "jitter_pct": 2.2,
+ "foot_slide": 0.921,
+ "loop_gap_m": 0.402,
+ "score": 50,
+ "issues": [
+  "turns 166 degrees in place",
+  "feet slide on 92% of planted frames",
+  "does not loop (40 cm mean gap between last and first pose)"
+ ],
+ "name": "FreeBVH_floordancers21",
+ "source": "input/BVH/FreeBVH/floordancers21.BVH",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22
+}

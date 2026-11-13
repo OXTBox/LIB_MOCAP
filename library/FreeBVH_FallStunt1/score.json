@@ -1,0 +1,25 @@
+{
+ "frames": 181,
+ "fps": 30,
+ "seconds": 6.03,
+ "kind": "in place",
+ "root_path_m": 1.826,
+ "travel_m_per_s": 0.268,
+ "turn_deg": 3,
+ "floor_m": -1.239,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.333,
+ "loop_gap_m": 2.306,
+ "score": 60,
+ "issues": [
+  "feet go 124 cm below the floor",
+  "feet slide on 33% of planted frames",
+  "does not loop (231 cm mean gap between last and first pose)"
+ ],
+ "name": "FreeBVH_FallStunt1",
+ "source": "input/BVH/FreeBVH/FallStunt1.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22
+}

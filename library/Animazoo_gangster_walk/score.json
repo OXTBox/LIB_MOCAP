@@ -1,0 +1,28 @@
+{
+ "frames": 454,
+ "fps": 60,
+ "seconds": 7.57,
+ "kind": "locomotion",
+ "root_path_m": 4.064,
+ "travel_m_per_s": 0.527,
+ "turn_deg": -3,
+ "floor_m": 0.025,
+ "jitter_pct": 28.1,
+ "foot_slide": 0.045,
+ "loop_gap_m": 0.036,
+ "score": 96,
+ "issues": [],
+ "name": "Animazoo_gangster_walk",
+ "source": "input/BVH/Animazoo/gangster walk.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.01001,
+ "joints": 24,
+ "cycle": {
+  "from": 111,
+  "to": 151,
+  "seconds": 1.37,
+  "gap_m": 0.016,
+  "travel_m_per_s": 0.959
+ }
+}

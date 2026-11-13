@@ -1,0 +1,21 @@
+{
+ "frames": 167,
+ "fps": 60,
+ "seconds": 2.78,
+ "kind": "in place",
+ "root_path_m": 0.25,
+ "travel_m_per_s": 0.009,
+ "turn_deg": 3,
+ "floor_m": 0.025,
+ "jitter_pct": 26.9,
+ "foot_slide": 0.021,
+ "loop_gap_m": 0.025,
+ "score": 99,
+ "issues": [],
+ "name": "Animazoo_cross_left",
+ "source": "input/BVH/Animazoo/cross left.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.01001,
+ "joints": 24
+}

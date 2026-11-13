@@ -1,0 +1,25 @@
+{
+ "frames": 641,
+ "fps": 60,
+ "seconds": 10.68,
+ "kind": "turn",
+ "root_path_m": 6.763,
+ "travel_m_per_s": 0.199,
+ "turn_deg": -361,
+ "floor_m": 0.02,
+ "jitter_pct": 99.8,
+ "foot_slide": 0.026,
+ "loop_gap_m": 0.185,
+ "score": 38,
+ "issues": [
+  "turns -361 degrees in place",
+  "jittery (100% noise)",
+  "does not loop (18 cm mean gap between last and first pose)"
+ ],
+ "name": "Animazoo_Dancing_-_Capoiera",
+ "source": "input/BVH/Animazoo/Dancing - Capoiera.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.01091,
+ "joints": 24
+}

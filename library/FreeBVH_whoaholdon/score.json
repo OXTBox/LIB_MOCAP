@@ -1,0 +1,31 @@
+{
+ "frames": 101,
+ "fps": 30,
+ "seconds": 3.37,
+ "kind": "locomotion",
+ "root_path_m": 4.65,
+ "travel_m_per_s": 0.388,
+ "turn_deg": -23,
+ "floor_m": 0.021,
+ "jitter_pct": 10.5,
+ "foot_slide": 1.0,
+ "loop_gap_m": 0.198,
+ "score": 50,
+ "issues": [
+  "feet slide on 100% of planted frames",
+  "does not loop (20 cm mean gap between last and first pose)"
+ ],
+ "name": "FreeBVH_whoaholdon",
+ "source": "input/BVH/FreeBVH/whoaholdon.BVH",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "cycle": {
+  "from": 72,
+  "to": 98,
+  "seconds": 0.9,
+  "gap_m": 0.068,
+  "travel_m_per_s": 0.696
+ }
+}

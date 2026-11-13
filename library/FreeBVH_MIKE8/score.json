@@ -1,0 +1,30 @@
+{
+ "frames": 219,
+ "fps": 60,
+ "seconds": 3.65,
+ "kind": "locomotion",
+ "root_path_m": 6.859,
+ "travel_m_per_s": 1.845,
+ "turn_deg": 12,
+ "floor_m": 0.031,
+ "jitter_pct": 16.6,
+ "foot_slide": 0.074,
+ "loop_gap_m": 0.079,
+ "score": 83,
+ "issues": [
+  "feet float 3 cm above the floor (stick is grounded)"
+ ],
+ "name": "FreeBVH_MIKE8",
+ "source": "input/BVH/FreeBVH/MIKE8.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "cycle": {
+  "from": 72,
+  "to": 106,
+  "seconds": 1.17,
+  "gap_m": 0.026,
+  "travel_m_per_s": 3.126
+ }
+}

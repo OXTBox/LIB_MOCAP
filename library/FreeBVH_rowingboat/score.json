@@ -1,0 +1,23 @@
+{
+ "frames": 660,
+ "fps": 30,
+ "seconds": 22.0,
+ "kind": "in place",
+ "root_path_m": 1.704,
+ "travel_m_per_s": 0.002,
+ "turn_deg": -1,
+ "floor_m": -0.157,
+ "jitter_pct": 44.0,
+ "foot_slide": 0.072,
+ "loop_gap_m": 0.061,
+ "score": 91,
+ "issues": [
+  "feet go 16 cm below the floor"
+ ],
+ "name": "FreeBVH_rowingboat",
+ "source": "input/BVH/FreeBVH/rowingboat.BVH",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22
+}

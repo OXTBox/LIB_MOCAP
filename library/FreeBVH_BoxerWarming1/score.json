@@ -1,0 +1,24 @@
+{
+ "frames": 896,
+ "fps": 60,
+ "seconds": 14.93,
+ "kind": "in place",
+ "root_path_m": 2.144,
+ "travel_m_per_s": 0.013,
+ "turn_deg": 33,
+ "floor_m": 0.077,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.001,
+ "loop_gap_m": 0.163,
+ "score": 75,
+ "issues": [
+  "feet float 8 cm above the floor (stick is grounded)",
+  "does not loop (16 cm mean gap between last and first pose)"
+ ],
+ "name": "FreeBVH_BoxerWarming1",
+ "source": "input/BVH/FreeBVH/BoxerWarming1.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22
+}

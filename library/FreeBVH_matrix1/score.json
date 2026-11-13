@@ -1,0 +1,23 @@
+{
+ "frames": 1270,
+ "fps": 30,
+ "seconds": 42.33,
+ "kind": "in place",
+ "root_path_m": 2.021,
+ "travel_m_per_s": 0.001,
+ "turn_deg": -20,
+ "floor_m": -0.021,
+ "jitter_pct": 0.4,
+ "foot_slide": 0.035,
+ "loop_gap_m": 0.041,
+ "score": 96,
+ "issues": [
+  "no root motion (hips locked: plays in place)"
+ ],
+ "name": "FreeBVH_matrix1",
+ "source": "input/BVH/FreeBVH/matrix1.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22
+}

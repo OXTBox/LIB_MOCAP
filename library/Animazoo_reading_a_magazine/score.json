@@ -1,0 +1,25 @@
+{
+ "frames": 520,
+ "fps": 60,
+ "seconds": 8.67,
+ "kind": "in place",
+ "root_path_m": 0.414,
+ "travel_m_per_s": 0.034,
+ "turn_deg": -4,
+ "floor_m": 0.025,
+ "jitter_pct": 56.0,
+ "foot_slide": 0.007,
+ "loop_gap_m": 0.328,
+ "score": 71,
+ "issues": [
+  "no root motion (hips locked: plays in place)",
+  "jittery (56% noise)",
+  "does not loop (33 cm mean gap between last and first pose)"
+ ],
+ "name": "Animazoo_reading_a_magazine",
+ "source": "input/BVH/Animazoo/reading a magazine.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.01001,
+ "joints": 24
+}

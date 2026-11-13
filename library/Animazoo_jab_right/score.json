@@ -1,0 +1,23 @@
+{
+ "frames": 128,
+ "fps": 60,
+ "seconds": 2.13,
+ "kind": "in place",
+ "root_path_m": 0.14,
+ "travel_m_per_s": 0.007,
+ "turn_deg": 6,
+ "floor_m": 0.025,
+ "jitter_pct": 32.9,
+ "foot_slide": 0.004,
+ "loop_gap_m": 0.042,
+ "score": 98,
+ "issues": [
+  "no root motion (hips locked: plays in place)"
+ ],
+ "name": "Animazoo_jab_right",
+ "source": "input/BVH/Animazoo/jab right.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.01001,
+ "joints": 24
+}

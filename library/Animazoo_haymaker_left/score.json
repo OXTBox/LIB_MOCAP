@@ -1,0 +1,23 @@
+{
+ "frames": 197,
+ "fps": 60,
+ "seconds": 3.28,
+ "kind": "in place",
+ "root_path_m": 0.521,
+ "travel_m_per_s": 0.02,
+ "turn_deg": 19,
+ "floor_m": 0.025,
+ "jitter_pct": 35.8,
+ "foot_slide": 0.03,
+ "loop_gap_m": 0.098,
+ "score": 88,
+ "issues": [
+  "does not loop (10 cm mean gap between last and first pose)"
+ ],
+ "name": "Animazoo_haymaker_left",
+ "source": "input/BVH/Animazoo/haymaker left.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.01001,
+ "joints": 24
+}

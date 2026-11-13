@@ -5,5 +5,72 @@ Notes column: first line of library/<name>/NOTES.md (written by hand, never over
 
 | Name | Kind | Length | Travel m/s | Score | Issues | Notes |
 |---|---|---|---|---|---|---|
-| Video_To_Mocap_Example_1 | turn | 4.83 s | 0.0 | **77** | no root motion (hips locked: plays in place); turns -335 degrees in place; does not loop (13 cm mean gap between last and first pose) |  |
-| proc_walk | locomotion (procedural, in place) | 1.07 s | 0.626 | **100** | procedural placeholder: replace with a captured walk |  |
+| Animazoo_Dancing_-_Break_Dancing | turn | 10.68 s | 0.086 | **38** | turns 275 degrees in place; jittery (111% noise); does not loop (24 cm mean gap between last and first pose) |  |
+| Animazoo_Dancing_-_Break_Dancing_2 | in place | 12.76 s | 0.059 | **75** | does not loop (46 cm mean gap between last and first pose) |  |
+| Animazoo_Dancing_-_Capoiera | turn | 10.68 s | 0.199 | **38** | turns -361 degrees in place; jittery (100% noise); does not loop (18 cm mean gap between last and first pose) |  |
+| Animazoo_Jumping_-_Hopping | turn | 10.55 s | 0.045 | **97** | turns -1091 degrees in place |  |
+| Animazoo_Jumping_-_Spinning_Kick | turn | 7.71 s | 0.105 | **76** | turns -735 degrees in place; does not loop (36 cm mean gap between last and first pose) |  |
+| Animazoo_Jumping_-_fly_kick | in place | 7.77 s | 0.056 | **78** | does not loop (40 cm mean gap between last and first pose) |  |
+| Animazoo_Martial_Arts_-_Kick | in place | 3.02 s | 0.228 | **72** | does not loop (53 cm mean gap between last and first pose) |  |
+| Animazoo_Martial_Arts_-_Side_Kick | locomotion (cycle 42-65, 0.8 s, gap 19 cm, 1.21 m/s) | 4.74 s | 0.466 | **76** | does not loop (43 cm mean gap between last and first pose) |  |
+| Animazoo_On_the_phone | in place | 14.33 s | 0.001 | **97** | - |  |
+| Animazoo_Running_-_Jog | locomotion (cycle 28-53, 0.87 s, gap 6 cm, 2.217 m/s) | 2.63 s | 1.663 | **83** | does not loop (12 cm mean gap between last and first pose) |  |
+| Animazoo_combo_left_southport | in place | 4.97 s | 0.013 | **84** | does not loop (12 cm mean gap between last and first pose) |  |
+| Animazoo_cross_left | in place | 2.78 s | 0.009 | **99** | - |  |
+| Animazoo_cross_right | in place | 2.97 s | 0.003 | **98** | - |  |
+| Animazoo_gangster_walk | locomotion (cycle 111-151, 1.37 s, gap 2 cm, 0.959 m/s) | 7.57 s | 0.527 | **96** | - |  |
+| Animazoo_hands_on_hips | in place | 6.22 s | 0.0 | **100** | no root motion (hips locked: plays in place) |  |
+| Animazoo_haymaker_left | in place | 3.28 s | 0.02 | **88** | does not loop (10 cm mean gap between last and first pose) |  |
+| Animazoo_haymaker_right | in place | 2.98 s | 0.012 | **98** | - |  |
+| Animazoo_hook_left | in place | 2.63 s | 0.025 | **90** | jittery (50% noise) |  |
+| Animazoo_hook_right | in place | 2.93 s | 0.008 | **97** | - |  |
+| Animazoo_hooker_walk | locomotion (cycle 122-165, 1.47 s, gap 2 cm, 0.936 m/s) | 7.5 s | 0.543 | **97** | - |  |
+| Animazoo_jab_right | in place | 2.13 s | 0.007 | **98** | no root motion (hips locked: plays in place) |  |
+| Animazoo_lean_back | in place | 5.62 s | 0.03 | **82** | no root motion (hips locked: plays in place); does not loop (15 cm mean gap between last and first pose) |  |
+| Animazoo_lean_back_arms_folded | in place | 5.78 s | 0.045 | **80** | no root motion (hips locked: plays in place); does not loop (24 cm mean gap between last and first pose) |  |
+| Animazoo_left_jab | in place | 2.85 s | 0.012 | **98** | - |  |
+| Animazoo_legs_crossed_lady_style | in place | 8.57 s | 0.03 | **79** | no root motion (hips locked: plays in place); does not loop (38 cm mean gap between last and first pose) |  |
+| Animazoo_legs_crossed_man_style | in place | 8.98 s | 0.006 | **92** | - |  |
+| Animazoo_machine_gun | in place | 7.17 s | 0.004 | **94** | no root motion (hips locked: plays in place) |  |
+| Animazoo_pointing | in place | 6.37 s | 0.007 | **98** | - |  |
+| Animazoo_reading_a_magazine | in place | 8.67 s | 0.034 | **71** | no root motion (hips locked: plays in place); jittery (56% noise); does not loop (33 cm mean gap between last and first pose) |  |
+| Animazoo_stand_push | in place | 3.95 s | 0.027 | **79** | does not loop (34 cm mean gap between last and first pose) |  |
+| Animazoo_stand_push_stand | in place | 6.42 s | 0.003 | **98** | - |  |
+| Animazoo_talking_angry_gesturing | in place | 7.63 s | 0.001 | **98** | - |  |
+| Animazoo_talking_gesturing | in place | 7.98 s | 0.003 | **99** | no root motion (hips locked: plays in place) |  |
+| Animazoo_upper_cut_right | in place | 3.07 s | 0.013 | **92** | - |  |
+| Animazoo_walk_and_stop | locomotion (cycle 81-117, 1.23 s, gap 3 cm, 1.273 m/s) | 5.85 s | 0.688 | **96** | - |  |
+| Animazoo_walking_waving | locomotion (cycle 79-114, 1.2 s, gap 2 cm, 1.09 m/s) | 6.8 s | 0.607 | **95** | - |  |
+| Animazoo_walking_waving_behind | locomotion (cycle 110-146, 1.23 s, gap 3 cm, 1.093 m/s) | 6.75 s | 0.582 | **87** | jittery (56% noise) |  |
+| Animazoo_watching_sport | in place | 7.93 s | 0.038 | **77** | does not loop (30 cm mean gap between last and first pose) |  |
+| Animazoo_watching_tv | in place | 6.6 s | 0.026 | **78** | no root motion (hips locked: plays in place); does not loop (34 cm mean gap between last and first pose) |  |
+| Animazoo_waving_1_hand | in place | 6.08 s | 0.001 | **100** | no root motion (hips locked: plays in place) |  |
+| Animazoo_waving_2_hands | in place | 6.2 s | 0.002 | **100** | no root motion (hips locked: plays in place) |  |
+| FreeBVH_BoxerWarming1 | in place | 14.93 s | 0.013 | **75** | feet float 8 cm above the floor (stick is grounded); does not loop (16 cm mean gap between last and first pose) |  |
+| FreeBVH_DANCE | turn | 37.7 s | 0.05 | **54** | turns -694 degrees in place; feet float 5 cm above the floor (stick is grounded); feet slide on 72% of planted frames; does not loop (10 cm mean gap between last and first pose) |  |
+| FreeBVH_FallStunt1 | in place | 6.03 s | 0.268 | **60** | feet go 124 cm below the floor; feet slide on 33% of planted frames; does not loop (231 cm mean gap between last and first pose) |  |
+| FreeBVH_MIKE8 | locomotion (cycle 72-106, 1.17 s, gap 3 cm, 3.126 m/s) | 3.65 s | 1.845 | **83** | feet float 3 cm above the floor (stick is grounded) |  |
+| FreeBVH_cellphone | in place | 10.63 s | 0.003 | **94** | feet float 4 cm above the floor (stick is grounded); jittery (46% noise) |  |
+| FreeBVH_drunk1 | in place | 17.83 s | 0.238 | **77** | does not loop (24 cm mean gap between last and first pose) |  |
+| FreeBVH_floordancers21 | turn | 4.93 s | 0.121 | **50** | turns 166 degrees in place; feet slide on 92% of planted frames; does not loop (40 cm mean gap between last and first pose) |  |
+| FreeBVH_limp1 | in place | 1.33 s | 0.012 | **70** | feet slide on 100% of planted frames |  |
+| FreeBVH_lowguntoknee1 | locomotion (cycle 13-33, 0.7 s, gap 6 cm, 1.031 m/s) | 7.07 s | 0.561 | **75** | turns 60 degrees in place; feet float 6 cm above the floor (stick is grounded); does not loop (30 cm mean gap between last and first pose) |  |
+| FreeBVH_matrix1 | in place | 42.33 s | 0.001 | **96** | no root motion (hips locked: plays in place) |  |
+| FreeBVH_onelegdance | turn | 3.83 s | 0.051 | **56** | turns -735 degrees in place; feet go 3 cm below the floor; feet slide on 40% of planted frames; does not loop (28 cm mean gap between last and first pose) |  |
+| FreeBVH_rowingboat | in place | 22.0 s | 0.002 | **91** | feet go 16 cm below the floor |  |
+| FreeBVH_skiing | in place | 34.1 s | 0.009 | **75** | feet float 5 cm above the floor (stick is grounded); does not loop (23 cm mean gap between last and first pose) |  |
+| FreeBVH_spectator | in place | 34.17 s | 0.001 | **80** | feet float 6 cm above the floor (stick is grounded); feet slide on 25% of planted frames |  |
+| FreeBVH_stand_yoyo | in place | 6.67 s | 0.005 | **88** | no root motion (hips locked: plays in place); feet float 8 cm above the floor (stick is grounded); jittery (54% noise) |  |
+| FreeBVH_traffic | in place | 57.5 s | 0.0 | **79** | no root motion (hips locked: plays in place); feet go 5 cm below the floor; jittery (71% noise) |  |
+| FreeBVH_walkslip1 | locomotion (cycle 114-134, 0.7 s, gap 6 cm, 0.37 m/s) | 8.77 s | 0.466 | **80** | does not loop (20 cm mean gap between last and first pose) |  |
+| FreeBVH_wall | turn | 6.73 s | 0.075 | **84** | turns -121 degrees in place; feet float 11 cm above the floor (stick is grounded); does not loop (10 cm mean gap between last and first pose) |  |
+| FreeBVH_whoaholdon | locomotion (cycle 72-98, 0.9 s, gap 7 cm, 0.696 m/s) | 3.37 s | 0.388 | **50** | feet slide on 100% of planted frames; does not loop (20 cm mean gap between last and first pose) |  |
+| Video_To_Mocap_Example_1 | turn | 4.83 s | 0.0 | **62** | no root motion (hips locked: plays in place); turns -335 degrees in place; feet go 4 cm below the floor; feet slide on 31% of planted frames; does not loop (20 cm mean gap between last and first pose) |  |
+| proc_walk | locomotion (procedural, in place) | 1.07 s | 0.93 | **98** | procedural placeholder: replace with a captured walk |  |
+
+## Skipped
+
+| Name | Source | Why |
+|---|---|---|
+| FreeBVH_handJive | input/BVH/FreeBVH/handJive.BVH | missing Hips, LeftUpLeg, RightUpLeg, LeftLeg, RightLeg, LeftFoot, RightFoot, Head |
+| FreeBVH_horseruncycle | input/BVH/FreeBVH/horseruncycle.bvh | not a human (has a tail) |

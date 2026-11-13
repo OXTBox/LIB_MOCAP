@@ -1,0 +1,21 @@
+{
+ "frames": 458,
+ "fps": 60,
+ "seconds": 7.63,
+ "kind": "in place",
+ "root_path_m": 0.855,
+ "travel_m_per_s": 0.001,
+ "turn_deg": 0,
+ "floor_m": -0.0,
+ "jitter_pct": 35.2,
+ "foot_slide": 0.027,
+ "loop_gap_m": 0.02,
+ "score": 98,
+ "issues": [],
+ "name": "Animazoo_talking_angry_gesturing",
+ "source": "input/BVH/Animazoo/talking angry gesturing.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.01001,
+ "joints": 24
+}

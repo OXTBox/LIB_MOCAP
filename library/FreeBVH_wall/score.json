@@ -1,0 +1,25 @@
+{
+ "frames": 202,
+ "fps": 30,
+ "seconds": 6.73,
+ "kind": "turn",
+ "root_path_m": 0.636,
+ "travel_m_per_s": 0.075,
+ "turn_deg": -121,
+ "floor_m": 0.107,
+ "jitter_pct": 26.3,
+ "foot_slide": 0.004,
+ "loop_gap_m": 0.102,
+ "score": 84,
+ "issues": [
+  "turns -121 degrees in place",
+  "feet float 11 cm above the floor (stick is grounded)",
+  "does not loop (10 cm mean gap between last and first pose)"
+ ],
+ "name": "FreeBVH_wall",
+ "source": "input/BVH/FreeBVH/wall.BVH",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22
+}

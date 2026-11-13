@@ -1,0 +1,24 @@
+{
+ "frames": 396,
+ "fps": 60,
+ "seconds": 6.6,
+ "kind": "in place",
+ "root_path_m": 0.374,
+ "travel_m_per_s": 0.026,
+ "turn_deg": -1,
+ "floor_m": 0.025,
+ "jitter_pct": 40.4,
+ "foot_slide": 0.036,
+ "loop_gap_m": 0.342,
+ "score": 78,
+ "issues": [
+  "no root motion (hips locked: plays in place)",
+  "does not loop (34 cm mean gap between last and first pose)"
+ ],
+ "name": "Animazoo_watching_tv",
+ "source": "input/BVH/Animazoo/watching tv.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.01001,
+ "joints": 24
+}

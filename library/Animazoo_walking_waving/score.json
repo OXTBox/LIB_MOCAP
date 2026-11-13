@@ -1,0 +1,28 @@
+{
+ "frames": 408,
+ "fps": 60,
+ "seconds": 6.8,
+ "kind": "locomotion",
+ "root_path_m": 4.188,
+ "travel_m_per_s": 0.607,
+ "turn_deg": -23,
+ "floor_m": 0.025,
+ "jitter_pct": 32.3,
+ "foot_slide": 0.037,
+ "loop_gap_m": 0.047,
+ "score": 95,
+ "issues": [],
+ "name": "Animazoo_walking_waving",
+ "source": "input/BVH/Animazoo/walking waving.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.01001,
+ "joints": 24,
+ "cycle": {
+  "from": 79,
+  "to": 114,
+  "seconds": 1.2,
+  "gap_m": 0.024,
+  "travel_m_per_s": 1.09
+ }
+}

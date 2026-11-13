@@ -1,0 +1,30 @@
+{
+ "frames": 263,
+ "fps": 30,
+ "seconds": 8.77,
+ "kind": "locomotion",
+ "root_path_m": 4.261,
+ "travel_m_per_s": 0.466,
+ "turn_deg": -2,
+ "floor_m": -0.01,
+ "jitter_pct": 2.4,
+ "foot_slide": 0.0,
+ "loop_gap_m": 0.201,
+ "score": 80,
+ "issues": [
+  "does not loop (20 cm mean gap between last and first pose)"
+ ],
+ "name": "FreeBVH_walkslip1",
+ "source": "input/BVH/FreeBVH/walkslip1.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "cycle": {
+  "from": 114,
+  "to": 134,
+  "seconds": 0.7,
+  "gap_m": 0.058,
+  "travel_m_per_s": 0.37
+ }
+}

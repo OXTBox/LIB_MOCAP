@@ -1,0 +1,24 @@
+{
+ "frames": 925,
+ "fps": 120,
+ "seconds": 7.71,
+ "kind": "turn",
+ "root_path_m": 5.661,
+ "travel_m_per_s": 0.105,
+ "turn_deg": -735,
+ "floor_m": 0.013,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.071,
+ "loop_gap_m": 0.362,
+ "score": 76,
+ "issues": [
+  "turns -735 degrees in place",
+  "does not loop (36 cm mean gap between last and first pose)"
+ ],
+ "name": "Animazoo_Jumping_-_Spinning_Kick",
+ "source": "input/BVH/Animazoo/Jumping - Spinning Kick.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.01024,
+ "joints": 24
+}

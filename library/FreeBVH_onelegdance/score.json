@@ -1,0 +1,26 @@
+{
+ "frames": 115,
+ "fps": 30,
+ "seconds": 3.83,
+ "kind": "turn",
+ "root_path_m": 2.19,
+ "travel_m_per_s": 0.051,
+ "turn_deg": -735,
+ "floor_m": -0.032,
+ "jitter_pct": 6.4,
+ "foot_slide": 0.4,
+ "loop_gap_m": 0.283,
+ "score": 56,
+ "issues": [
+  "turns -735 degrees in place",
+  "feet go 3 cm below the floor",
+  "feet slide on 40% of planted frames",
+  "does not loop (28 cm mean gap between last and first pose)"
+ ],
+ "name": "FreeBVH_onelegdance",
+ "source": "input/BVH/FreeBVH/onelegdance.BVH",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22
+}

@@ -1,0 +1,21 @@
+{
+ "frames": 184,
+ "fps": 60,
+ "seconds": 3.07,
+ "kind": "in place",
+ "root_path_m": 0.632,
+ "travel_m_per_s": 0.013,
+ "turn_deg": -7,
+ "floor_m": 0.025,
+ "jitter_pct": 35.3,
+ "foot_slide": 0.034,
+ "loop_gap_m": 0.067,
+ "score": 92,
+ "issues": [],
+ "name": "Animazoo_upper_cut_right",
+ "source": "input/BVH/Animazoo/upper cut right.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.01001,
+ "joints": 24
+}

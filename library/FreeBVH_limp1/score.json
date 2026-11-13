@@ -1,0 +1,23 @@
+{
+ "frames": 40,
+ "fps": 30,
+ "seconds": 1.33,
+ "kind": "in place",
+ "root_path_m": 0.349,
+ "travel_m_per_s": 0.012,
+ "turn_deg": -4,
+ "floor_m": 0.021,
+ "jitter_pct": 5.0,
+ "foot_slide": 1.0,
+ "loop_gap_m": 0.014,
+ "score": 70,
+ "issues": [
+  "feet slide on 100% of planted frames"
+ ],
+ "name": "FreeBVH_limp1",
+ "source": "input/BVH/FreeBVH/limp1.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22
+}

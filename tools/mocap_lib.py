@@ -2,20 +2,27 @@
 """mocap_lib.py - the LIB_MOCAP library: process captures, score them, keep a catalog.
 
     python3 -I tools/mocap_lib.py process [NAME ...]   every capture in input/ (or just NAME)
+    python3 -I tools/mocap_lib.py process --new        only captures not yet in library/
     python3 -I tools/mocap_lib.py procwalk             the procedural placeholder walk
     python3 -I tools/mocap_lib.py catalog              rebuild CATALOG.md from library/
 
-A capture is a *_skeleton.glb in input/ (a BVH beside it supplies the joint names). Its
-name is the subfolder it sits in (input/<name>/...), or the file name without
-"_skeleton". Each one becomes library/<name>/:
+A capture is either
+  - a MoCapAnything *_skeleton.glb (a BVH beside it supplies the joint names), named after
+    its subfolder (input/<name>/...) or the file name without "_skeleton"; or
+  - any other .bvh (Animazoo, Truebones/Poser, CMU, Mixamo...: names are mapped by bvh.py),
+    named <folder>_<file>. Rigs that are not a whole human (tails, hands only) are skipped
+    and listed in CATALOG.md.
+Every clip is scaled so its legs (hip to ankle) are STD_LEG long, whatever units the file
+used, so clips from different sources fit the same body. Each one becomes library/<name>/:
 
-    <name>_skinned.glb   procedural body skinned to the skeleton (xt3d)       [mocap_skin.py]
-    <name>_clip.txt      65 joint world positions per frame (xTalk)          [mocap_skin.py]
+    <name>_skinned.glb   procedural body skinned to the skeleton (xt3d; GLB captures only)
+    <name>_clip.txt      65 joint world positions per frame (xTalk; GLB captures only)
     <name>_stick.txt     the minimal stick figure for Vibecode3D (below)
     score.json           the measurements and issues
     NOTES.md             human notes; created once, never overwritten
 
-Stick clip (plain text, y up, metres): 25 joints (no fingers), edges, one line per frame.
+Stick clip (plain text, y up, metres): up to 27 joints (no fingers), edges, one line per
+frame, at most 30 frames a second.
 Made in place (hips over 0,0), turned to face +Z every frame, and lowered so the lowest
 foot point of the whole clip touches y = 0. The removed root motion is kept as
 `travel` (metres a second, forward) so a game can match its walking speed to the feet.
@@ -33,12 +40,17 @@ INPUT = os.path.join(ROOT, 'input')
 LIBRARY = os.path.join(ROOT, 'library')
 sys.path.insert(0, HERE)
 import mocap_skin  # noqa: E402
+import bvh  # noqa: E402
 
 STICK = ('Hips Spine Spine1 Spine2 Neck Head HeadTop_End '
          'LeftShoulder LeftArm LeftForeArm LeftHand RightShoulder RightArm RightForeArm RightHand '
-         'LeftUpLeg LeftLeg LeftFoot LeftToeBase LeftToe_End '
-         'RightUpLeg RightLeg RightFoot RightToeBase RightToe_End').split()
-FEET = ('LeftFoot', 'LeftToeBase', 'LeftToe_End', 'RightFoot', 'RightToeBase', 'RightToe_End')
+         'LeftUpLeg LeftLeg LeftFoot LeftHeel LeftToeBase LeftToe_End '
+         'RightUpLeg RightLeg RightFoot RightHeel RightToeBase RightToe_End').split()
+FEET = ('LeftFoot', 'LeftHeel', 'LeftToeBase', 'LeftToe_End', 'RightFoot', 'RightHeel', 'RightToeBase', 'RightToe_End')
+NEEDED = ('Hips', 'LeftUpLeg', 'RightUpLeg', 'LeftLeg', 'RightLeg', 'LeftFoot', 'RightFoot', 'Head')
+JITTER_OK = 45          # jitter index (%) still counted as clean; see score()
+STD_LEG = 0.85          # metres from hip joint to ankle (an adult of about 1.75 m)
+STICK_FPS = 30
 
 
 # ---------------------------------------------------------------------------- clip io
@@ -94,13 +106,20 @@ def score(names, frames, fps, inplace_speed=0.0):
         turn += d
     feet = [names.index(x) for x in FEET if x in names]
     floor = min(f[j][1] for f in frames for j in feet)
-    # jitter: mean size of each joint's acceleration, m/s^2
-    acc, cnt = 0.0, 0
-    for a, b, c in zip(frames, frames[1:], frames[2:]):
-        for j in range(len(names)):
-            acc += math.dist(a[j], (2 * b[j][0] - c[j][0], 2 * b[j][1] - c[j][1], 2 * b[j][2] - c[j][2])) / dt ** 2
-            cnt += 1
-    jitter = acc / max(1, cnt)
+    # jitter: noise, not speed. For smooth motion the wobble of a joint about the midpoint of
+    # its neighbours one frame away is about 1/4 of the wobble two frames away (it grows with
+    # time squared); for capture noise the two are about equal. So 0% = smooth, 100% = noise,
+    # whatever the speed, scale or frame rate.
+    def wobble(step):
+        per = []
+        for k in range(step, len(frames) - step):
+            a, b, c = frames[k - step], frames[k], frames[k + step]
+            per.append(sum(math.dist(b[j], ((a[j][0] + c[j][0]) / 2, (a[j][1] + c[j][1]) / 2, (a[j][2] + c[j][2]) / 2))
+                           for j in range(len(names))) / len(names))
+        per.sort()
+        return per[len(per) // 2] if per else 0.0
+    w2 = wobble(2)
+    jitter = max(0.0, (wobble(1) / w2 - 0.25) / 0.75) * 100 if w2 > 1e-6 else 0.0
     # foot slide: a foot point within 2 cm of the floor that still moves sideways
     planted, sliding = 0, 0
     for a, b in zip(frames, frames[1:]):
@@ -115,7 +134,7 @@ def score(names, frames, fps, inplace_speed=0.0):
     st = stick_frames(names, [frames[0], frames[-1]], ground=0)
     gap = sum(math.dist(p, q) for p, q in zip(st[0], st[1])) / len(names)
     s = 100.0
-    s -= min(40, max(0, jitter - 4) * 2)          # calm captures sit around 2-4 m/s^2
+    s -= min(40, max(0, jitter - JITTER_OK) * 0.8)
     s -= min(30, slide * 60)
     s -= min(20, max(0, gap - 0.03) * 150)
     s -= 5 if floor > 0.03 else 0
@@ -128,8 +147,8 @@ def score(names, frames, fps, inplace_speed=0.0):
         issues.append('feet float %d cm above the floor (stick is grounded)' % round(floor * 100))
     if floor < -0.03:
         issues.append('feet go %d cm below the floor' % round(-floor * 100))
-    if jitter > 8:
-        issues.append('jittery (%.1f m/s^2 mean joint acceleration)' % jitter)
+    if jitter > JITTER_OK:
+        issues.append('jittery (%d%% noise)' % round(jitter))
     if slide > 0.2:
         issues.append('feet slide on %d%% of planted frames' % round(slide * 100))
     if gap > 0.08:
@@ -139,16 +158,36 @@ def score(names, frames, fps, inplace_speed=0.0):
     return {'frames': n, 'fps': fps, 'seconds': round(n * dt, 2), 'kind': kind,
             'root_path_m': round(travel_path, 3), 'travel_m_per_s': round(speed, 3),
             'turn_deg': round(math.degrees(turn)), 'floor_m': round(floor, 3),
-            'jitter_m_per_s2': round(jitter, 2), 'foot_slide': round(slide, 3), 'loop_gap_m': round(gap, 3),
+            'jitter_pct': round(jitter, 1), 'foot_slide': round(slide, 3), 'loop_gap_m': round(gap, 3),
             'score': max(0, round(s)), 'issues': issues}
 
 
-def stick_frames(names, frames, ground=None):
+def toe_sign(names, frames):
+    """+1 when the toes point along the hip-line forward, -1 when the rig is mirrored
+    (its "Left" joints are on the body's right): decided by the whole clip"""
+    pairs = []
+    for side in ('Left', 'Right'):
+        a = next((names.index(side + x) for x in ('Foot', 'Heel') if side + x in names), None)
+        b = next((names.index(side + x) for x in ('Toe_End', 'ToeBase') if side + x in names), None)
+        if a is not None and b is not None:
+            pairs.append((a, b))
+    total = 0.0
+    for f in frames[::max(1, len(frames) // 60)]:
+        yaw = facing(f, names)
+        fx, fz = math.sin(yaw), math.cos(yaw)
+        for a, b in pairs:
+            total += (f[b][0] - f[a][0]) * fx + (f[b][2] - f[a][2]) * fz
+    return -1 if total < 0 else 1
+
+
+def stick_frames(names, frames, ground=None, sign=None):
     """in place, facing +Z, lowest foot point at y = 0 (ground: that offset, or None = measure)"""
     hi = names.index('Hips')
+    if sign is None:
+        sign = toe_sign(names, frames)
     out = []
     for f in frames:
-        yaw = facing(f, names)
+        yaw = facing(f, names) + (math.pi if sign < 0 else 0)
         c, s = math.cos(-yaw), math.sin(-yaw)
         hx, hz = f[hi][0], f[hi][2]
         out.append([((p[0] - hx) * c + (p[2] - hz) * s, p[1], -(p[0] - hx) * s + (p[2] - hz) * c) for p in f])
@@ -158,17 +197,59 @@ def stick_frames(names, frames, ground=None):
     return [[(p[0], p[1] - ground, p[2]) for p in f] for f in out]
 
 
-def write_stick(path, name, names, parents, frames, fps, travel, note):
+def find_cycle(stick, hips, fps):
+    """the cleanest loop in the moving part of a locomotion clip: frames a < b (0-based,
+    b - a from 0.7 to 1.6 s) whose poses match best. stick: in-place frames; hips: raw hips
+    positions (scaled) at the same rate. Returns (a, b, gap_m, speed) or None."""
+    n = len(stick)
+    lo, hi = int(0.7 * fps), int(1.6 * fps)
+    best = None
+    for a in range(0, n - lo):
+        for b in range(a + lo, min(n, a + hi + 1)):
+            d = math.dist((hips[a][0], hips[a][2]), (hips[b][0], hips[b][2]))
+            speed = d / ((b - a) / fps)
+            if speed < 0.3:
+                continue
+            gap = sum(math.dist(p, q) for p, q in zip(stick[a], stick[b])) / len(stick[a])
+            if best is None or gap < best[2]:
+                best = (a, b, gap, speed)
+    return best
+
+
+def write_stick(path, name, names, parents, frames, fps, travel, note, cycle=None):
     edges = ' '.join('%d-%d' % (p, k) for k, p in enumerate(parents) if p >= 0)
     lines = ['# LIB_MOCAP stick clip: %s' % note,
              'name,%s' % name, 'fps,%g' % fps, 'frames,%d' % len(frames), 'travel,%g' % travel,
              'joints,%d' % len(names), 'names,' + ','.join(names),
-             'parents,' + ','.join(str(p) for p in parents), 'edges,' + edges,
+             'parents,' + ','.join(str(p) for p in parents), 'edges,' + edges] + \
+        (['cycle,%d,%d' % (cycle[0] + 1, cycle[1]), 'cycle_travel,%g' % round(cycle[3], 3)] if cycle else []) + [
              '# frame lines: x,y,z per joint (metres, y up, facing +Z, in place, feet on y = 0)']
     for f in frames:
         lines.append(','.join('%.3f' % c for p in f for c in p))
     with open(path, 'w', encoding='utf-8', newline='\n') as fh:
         fh.write('\n'.join(lines) + '\n')
+
+
+def normalize(names, frames):
+    """scale everything so the legs are STD_LEG long; returns (frames, scale)"""
+    f0 = frames[0]
+    legs = []
+    for side in ('Left', 'Right'):
+        a, b, c = (names.index(side + x) for x in ('UpLeg', 'Leg', 'Foot'))
+        legs.append(math.dist(f0[a], f0[b]) + math.dist(f0[b], f0[c]))
+    k = STD_LEG / (sum(legs) / 2)
+    return [[(p[0] * k, p[1] * k, p[2] * k) for p in f] for f in frames], k
+
+
+def resample(frames, fps, target=STICK_FPS):
+    if fps <= target * 1.05:
+        return frames, fps
+    step = fps / target
+    out, t = [], 0.0
+    while round(t) < len(frames):
+        out.append(frames[int(round(t))])
+        t += step
+    return out, round(fps / step, 3)
 
 
 # ---------------------------------------------------------------------------- process
@@ -177,11 +258,17 @@ def captures():
     if not os.path.isdir(INPUT):
         return found
     for dirpath, _, files in os.walk(INPUT):
+        has_glb = any(f.lower().endswith('.glb') for f in files)
         for f in sorted(files):
-            if f.lower().endswith('.glb'):
+            low = f.lower()
+            if low.endswith('.glb'):
                 rel = os.path.relpath(dirpath, INPUT)
                 name = rel.split(os.sep)[0] if rel != '.' else re.sub(r'_skeleton$', '', f[:-4])
-                found.append((re.sub(r'[^\w.-]+', '_', name), os.path.join(dirpath, f)))
+            elif low.endswith('.bvh') and not has_glb:
+                name = os.path.basename(dirpath) + '_' + os.path.splitext(f)[0]
+            else:
+                continue
+            found.append((re.sub(r'_+', '_', re.sub(r'[^\w.-]+', '_', name)).strip('_'), os.path.join(dirpath, f)))
     return found
 
 
@@ -192,12 +279,51 @@ def process(name, glb):
     info = mocap_skin.convert(glb, base, 30, 1.0)
     head, frames = read_clip(base + '_clip.txt')
     names, parents, sub = subset(head, frames)
+    sub, k = normalize(names, sub)
     sc = score(names, sub, float(head['fps']))
     sc.update({'name': name, 'source': os.path.relpath(glb, ROOT), 'joints_names_from': info['names_from'],
                'glb_key_rate': round(info['glb_rate'], 2), 'procedural': False})
-    st = stick_frames(names, sub)
-    write_stick(base + '_stick.txt', name, names, parents, st, float(head['fps']), sc['travel_m_per_s'],
+    sc['scale'] = round(k, 4)
+    st, sfps = resample(stick_frames(names, sub), float(head['fps']))
+    write_stick(base + '_stick.txt', name, names, parents, st, sfps, sc['travel_m_per_s'],
                 'from %s' % os.path.basename(glb))
+    with open(os.path.join(out, 'score.json'), 'w') as fh:
+        json.dump(sc, fh, indent=1)
+    notes = os.path.join(out, 'NOTES.md')
+    if not os.path.exists(notes):
+        with open(notes, 'w') as fh:
+            fh.write('# %s\n\n(one line about the motion, then anything found while using it)\n' % name)
+    return sc
+
+
+def process_bvh(name, path):
+    """a BVH file -> library/<name>/ (stick clip and score); returns the score, or a dict
+    with 'skipped' when the rig is not a whole human"""
+    clip = bvh.load(path)
+    names = clip['names']
+    missing = [n for n in NEEDED if n not in names]
+    if any(n and re.match(r'tail', n, re.I) for n in names):
+        return {'name': name, 'source': os.path.relpath(path, ROOT), 'skipped': 'not a human (has a tail)'}
+    if missing:
+        return {'name': name, 'source': os.path.relpath(path, ROOT), 'skipped': 'missing ' + ', '.join(missing)}
+    head = {'names': names, 'parents': clip['parents']}
+    snames, parents, sub = subset(head, clip['frames'])
+    sub, k = normalize(snames, sub)
+    sc = score(snames, sub, clip['fps'])
+    out = os.path.join(LIBRARY, name)
+    os.makedirs(out, exist_ok=True)
+    sc.update({'name': name, 'source': os.path.relpath(path, ROOT), 'procedural': False, 'format': 'bvh',
+               'scale': round(k, 5), 'joints': len(snames)})
+    st, sfps = resample(stick_frames(snames, sub), clip['fps'])
+    cycle = None
+    if sc['kind'] == 'locomotion':
+        hips, _ = resample([f[snames.index('Hips')] for f in sub], clip['fps'])
+        cycle = find_cycle(st, hips, sfps)
+        if cycle:
+            sc['cycle'] = {'from': cycle[0] + 1, 'to': cycle[1], 'seconds': round((cycle[1] - cycle[0]) / sfps, 2),
+                           'gap_m': round(cycle[2], 3), 'travel_m_per_s': round(cycle[3], 3)}
+    write_stick(os.path.join(out, name + '_stick.txt'), name, snames, parents, st, sfps,
+                sc['travel_m_per_s'], 'from %s' % os.path.relpath(path, ROOT), cycle)
     with open(os.path.join(out, 'score.json'), 'w') as fh:
         json.dump(sc, fh, indent=1)
     notes = os.path.join(out, 'NOTES.md')
@@ -216,8 +342,10 @@ def procwalk():
     for d in sorted(os.listdir(LIBRARY)):
         p = os.path.join(LIBRARY, d, d + '_stick.txt')
         if d != name and os.path.exists(p):
-            ref = p
-            break
+            h_, _ = read_clip(p)
+            if all(x in h_['names'] for x in ('LeftToeBase', 'LeftToe_End', 'Spine1', 'Spine2')):
+                ref = p
+                break
     if ref:
         head, frames = read_clip(ref)
         names, f0 = head['names'], frames[0]
@@ -275,7 +403,7 @@ def procwalk():
             ha = (el[0], el[1] - fore * math.cos(fa), el[2] + fore * math.sin(fa) + 0.0)
             pos[side + 'Arm'], pos[side + 'ForeArm'], pos[side + 'Hand'] = shp, el, ha
         frames_out.append([pos[nm] for nm in names])
-    ground = min(f[names.index(x)][1] for f in frames_out for x in FEET)
+    ground = min(f[names.index(x)][1] for f in frames_out for x in FEET if x in names)
     frames_out = [[(p[0], p[1] - ground, p[2]) for p in f] for f in frames_out]
     # walking speed = how far an ankle travels back during stance (half a cycle), so the
     # game can move the figure at exactly that speed and the planted foot stays put
@@ -303,6 +431,11 @@ def knee_ik(hip, ankle, l1, l2):
     return (hip[0], hip[1] - l1 * math.cos(th), hip[2] + l1 * math.sin(th))
 
 
+def load_skipped():
+    p = os.path.join(LIBRARY, '_skipped.json')
+    return json.load(open(p)) if os.path.exists(p) else {}
+
+
 def catalog():
     rows = []
     for d in sorted(os.listdir(LIBRARY)) if os.path.isdir(LIBRARY) else []:
@@ -316,13 +449,20 @@ def catalog():
             lines = [l for l in open(np_).read().splitlines() if l.strip() and not l.startswith('#')
                      and not l.startswith('(one line')]
             note = lines[0] if lines else ''
+        cyc = sc.get('cycle')
+        kind = sc['kind'] + (' (cycle %s-%s, %s s, gap %d cm, %s m/s)' % (
+            cyc['from'], cyc['to'], cyc['seconds'], round(cyc['gap_m'] * 100), cyc['travel_m_per_s']) if cyc else '')
         rows.append('| %s | %s | %s s | %s | **%s** | %s | %s |' % (
-            d, sc['kind'], sc['seconds'], sc.get('travel_m_per_s', 0), sc['score'],
+            d, kind, sc['seconds'], sc.get('travel_m_per_s', 0), sc['score'],
             '; '.join(sc['issues']) or '-', note))
     text = ['# LIB_MOCAP catalog (generated by tools/mocap_lib.py catalog)', '',
             'Score 0-100: jitter, foot sliding and a loop gap cost points (see tools/mocap_lib.py).',
             'Notes column: first line of library/<name>/NOTES.md (written by hand, never overwritten).', '',
             '| Name | Kind | Length | Travel m/s | Score | Issues | Notes |', '|---|---|---|---|---|---|---|'] + rows
+    sk = load_skipped()
+    if sk:
+        text += ['', '## Skipped', '', '| Name | Source | Why |', '|---|---|---|'] + \
+            ['| %s | %s | %s |' % (n, v['source'], v['skipped']) for n, v in sorted(sk.items())]
     with open(os.path.join(ROOT, 'CATALOG.md'), 'w') as fh:
         fh.write('\n'.join(text) + '\n')
     return len(rows)
@@ -334,12 +474,26 @@ def main(argv=None):
         print(__doc__)
         return 2
     if a[0] == 'process':
-        todo = [(n, g) for n, g in captures() if len(a) == 1 or n in a[1:]]
+        want = [x for x in a[1:] if not x.startswith('--')]
+        todo = [(n, g) for n, g in captures() if not want or n in want]
+        if '--new' in a:
+            todo = [(n, g) for n, g in todo if not os.path.exists(os.path.join(LIBRARY, n, 'score.json'))]
         if not todo:
-            print('nothing in %s' % INPUT)
+            print('nothing to do in %s' % INPUT)
+        skipped = load_skipped()
         for n, g in todo:
-            sc = process(n, g)
-            print('%-32s score %3d  %s  %s' % (n, sc['score'], sc['kind'], '; '.join(sc['issues']) or 'no issues'))
+            try:
+                sc = process(n, g) if g.lower().endswith('.glb') else process_bvh(n, g)
+            except (ValueError, IndexError, KeyError) as e:
+                sc = {'name': n, 'source': os.path.relpath(g, ROOT), 'skipped': 'could not read: %s' % e}
+            if 'skipped' in sc:
+                skipped[n] = sc
+                print('%-44s SKIPPED  %s' % (n, sc['skipped']))
+            else:
+                skipped.pop(n, None)
+                print('%-44s score %3d  %-10s %s' % (n, sc['score'], sc['kind'], '; '.join(sc['issues']) or 'no issues'))
+        with open(os.path.join(LIBRARY, '_skipped.json'), 'w') as fh:
+            json.dump(skipped, fh, indent=1)
     elif a[0] == 'procwalk':
         sc = procwalk()
         print('proc_walk score %d: %s' % (sc['score'], '; '.join(sc['issues'])))

@@ -1,0 +1,12 @@
+{
+ "FreeBVH_handJive": {
+  "name": "FreeBVH_handJive",
+  "source": "input/BVH/FreeBVH/handJive.BVH",
+  "skipped": "missing Hips, LeftUpLeg, RightUpLeg, LeftLeg, RightLeg, LeftFoot, RightFoot, Head"
+ },
+ "FreeBVH_horseruncycle": {
+  "name": "FreeBVH_horseruncycle",
+  "source": "input/BVH/FreeBVH/horseruncycle.bvh",
+  "skipped": "not a human (has a tail)"
+ }
+}

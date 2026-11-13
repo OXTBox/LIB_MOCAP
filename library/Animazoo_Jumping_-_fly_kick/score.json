@@ -1,0 +1,23 @@
+{
+ "frames": 933,
+ "fps": 120,
+ "seconds": 7.77,
+ "kind": "in place",
+ "root_path_m": 5.08,
+ "travel_m_per_s": 0.056,
+ "turn_deg": -15,
+ "floor_m": 0.012,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.027,
+ "loop_gap_m": 0.403,
+ "score": 78,
+ "issues": [
+  "does not loop (40 cm mean gap between last and first pose)"
+ ],
+ "name": "Animazoo_Jumping_-_fly_kick",
+ "source": "input/BVH/Animazoo/Jumping - fly kick.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.01024,
+ "joints": 24
+}

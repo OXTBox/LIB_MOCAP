@@ -1,0 +1,21 @@
+{
+ "frames": 860,
+ "fps": 60,
+ "seconds": 14.33,
+ "kind": "in place",
+ "root_path_m": 1.371,
+ "travel_m_per_s": 0.001,
+ "turn_deg": -3,
+ "floor_m": -0.0,
+ "jitter_pct": 38.7,
+ "foot_slide": 0.016,
+ "loop_gap_m": 0.045,
+ "score": 97,
+ "issues": [],
+ "name": "Animazoo_On_the_phone",
+ "source": "input/BVH/Animazoo/On the phone.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.01001,
+ "joints": 24
+}

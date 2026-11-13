@@ -1,0 +1,30 @@
+{
+ "frames": 569,
+ "fps": 120,
+ "seconds": 4.74,
+ "kind": "locomotion",
+ "root_path_m": 3.763,
+ "travel_m_per_s": 0.466,
+ "turn_deg": 33,
+ "floor_m": 0.01,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.062,
+ "loop_gap_m": 0.433,
+ "score": 76,
+ "issues": [
+  "does not loop (43 cm mean gap between last and first pose)"
+ ],
+ "name": "Animazoo_Martial_Arts_-_Side_Kick",
+ "source": "input/BVH/Animazoo/Martial Arts - Side Kick.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.01024,
+ "joints": 24,
+ "cycle": {
+  "from": 42,
+  "to": 65,
+  "seconds": 0.8,
+  "gap_m": 0.192,
+  "travel_m_per_s": 1.21
+ }
+}

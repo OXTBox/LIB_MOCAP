@@ -4,13 +4,13 @@
  "seconds": 1.07,
  "kind": "locomotion (procedural, in place)",
  "root_path_m": 0.0,
- "travel_m_per_s": 0.626,
+ "travel_m_per_s": 0.93,
  "turn_deg": 0,
  "floor_m": 0.0,
- "jitter_m_per_s2": 2.85,
- "foot_slide": 0.0,
- "loop_gap_m": 0.012,
- "score": 100,
+ "jitter_pct": 0.2,
+ "foot_slide": 0.026,
+ "loop_gap_m": 0.015,
+ "score": 98,
  "issues": [
   "procedural placeholder: replace with a captured walk"
  ],

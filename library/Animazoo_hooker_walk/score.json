@@ -1,0 +1,28 @@
+{
+ "frames": 450,
+ "fps": 60,
+ "seconds": 7.5,
+ "kind": "locomotion",
+ "root_path_m": 4.157,
+ "travel_m_per_s": 0.543,
+ "turn_deg": 1,
+ "floor_m": 0.025,
+ "jitter_pct": 40.1,
+ "foot_slide": 0.044,
+ "loop_gap_m": 0.029,
+ "score": 97,
+ "issues": [],
+ "name": "Animazoo_hooker_walk",
+ "source": "input/BVH/Animazoo/hooker walk.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.01001,
+ "joints": 24,
+ "cycle": {
+  "from": 122,
+  "to": 165,
+  "seconds": 1.47,
+  "gap_m": 0.016,
+  "travel_m_per_s": 0.936
+ }
+}

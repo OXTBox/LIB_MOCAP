@@ -1,0 +1,24 @@
+{
+ "frames": 1025,
+ "fps": 30,
+ "seconds": 34.17,
+ "kind": "in place",
+ "root_path_m": 6.737,
+ "travel_m_per_s": 0.001,
+ "turn_deg": -6,
+ "floor_m": 0.06,
+ "jitter_pct": 36.7,
+ "foot_slide": 0.245,
+ "loop_gap_m": 0.02,
+ "score": 80,
+ "issues": [
+  "feet float 6 cm above the floor (stick is grounded)",
+  "feet slide on 25% of planted frames"
+ ],
+ "name": "FreeBVH_spectator",
+ "source": "input/BVH/FreeBVH/spectator.BVH",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22
+}

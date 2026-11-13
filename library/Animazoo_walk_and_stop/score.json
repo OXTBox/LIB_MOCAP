@@ -1,0 +1,28 @@
+{
+ "frames": 351,
+ "fps": 60,
+ "seconds": 5.85,
+ "kind": "locomotion",
+ "root_path_m": 4.069,
+ "travel_m_per_s": 0.688,
+ "turn_deg": -2,
+ "floor_m": 0.021,
+ "jitter_pct": 25.6,
+ "foot_slide": 0.042,
+ "loop_gap_m": 0.043,
+ "score": 96,
+ "issues": [],
+ "name": "Animazoo_walk_and_stop",
+ "source": "input/BVH/Animazoo/walk and stop.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.01001,
+ "joints": 24,
+ "cycle": {
+  "from": 81,
+  "to": 117,
+  "seconds": 1.23,
+  "gap_m": 0.03,
+  "travel_m_per_s": 1.273
+ }
+}

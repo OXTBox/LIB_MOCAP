@@ -1,0 +1,21 @@
+{
+ "frames": 171,
+ "fps": 60,
+ "seconds": 2.85,
+ "kind": "in place",
+ "root_path_m": 0.228,
+ "travel_m_per_s": 0.012,
+ "turn_deg": 3,
+ "floor_m": 0.025,
+ "jitter_pct": 40.9,
+ "foot_slide": 0.015,
+ "loop_gap_m": 0.035,
+ "score": 98,
+ "issues": [],
+ "name": "Animazoo_left_jab",
+ "source": "input/BVH/Animazoo/left jab.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.01001,
+ "joints": 24
+}

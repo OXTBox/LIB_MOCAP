@@ -1,0 +1,21 @@
+{
+ "frames": 385,
+ "fps": 60,
+ "seconds": 6.42,
+ "kind": "in place",
+ "root_path_m": 0.476,
+ "travel_m_per_s": 0.003,
+ "turn_deg": 16,
+ "floor_m": 0.025,
+ "jitter_pct": 36.1,
+ "foot_slide": 0.008,
+ "loop_gap_m": 0.038,
+ "score": 98,
+ "issues": [],
+ "name": "Animazoo_stand_push_stand",
+ "source": "input/BVH/Animazoo/stand push stand.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.01001,
+ "joints": 24
+}

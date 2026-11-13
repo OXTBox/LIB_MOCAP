@@ -1,0 +1,25 @@
+{
+ "frames": 1725,
+ "fps": 30,
+ "seconds": 57.5,
+ "kind": "in place",
+ "root_path_m": 0.542,
+ "travel_m_per_s": 0.0,
+ "turn_deg": 1,
+ "floor_m": -0.049,
+ "jitter_pct": 71.3,
+ "foot_slide": 0.0,
+ "loop_gap_m": 0.017,
+ "score": 79,
+ "issues": [
+  "no root motion (hips locked: plays in place)",
+  "feet go 5 cm below the floor",
+  "jittery (71% noise)"
+ ],
+ "name": "FreeBVH_traffic",
+ "source": "input/BVH/FreeBVH/traffic.BVH",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22
+}

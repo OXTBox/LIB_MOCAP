@@ -1,0 +1,24 @@
+{
+ "frames": 319,
+ "fps": 30,
+ "seconds": 10.63,
+ "kind": "in place",
+ "root_path_m": 0.798,
+ "travel_m_per_s": 0.003,
+ "turn_deg": 2,
+ "floor_m": 0.042,
+ "jitter_pct": 46.4,
+ "foot_slide": 0.007,
+ "loop_gap_m": 0.02,
+ "score": 94,
+ "issues": [
+  "feet float 4 cm above the floor (stick is grounded)",
+  "jittery (46% noise)"
+ ],
+ "name": "FreeBVH_cellphone",
+ "source": "input/BVH/FreeBVH/cellphone.BVH",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22
+}

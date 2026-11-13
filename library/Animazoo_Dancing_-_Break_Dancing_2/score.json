@@ -1,0 +1,23 @@
+{
+ "frames": 1531,
+ "fps": 120,
+ "seconds": 12.76,
+ "kind": "in place",
+ "root_path_m": 12.505,
+ "travel_m_per_s": 0.059,
+ "turn_deg": -12,
+ "floor_m": 0.004,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.081,
+ "loop_gap_m": 0.459,
+ "score": 75,
+ "issues": [
+  "does not loop (46 cm mean gap between last and first pose)"
+ ],
+ "name": "Animazoo_Dancing_-_Break_Dancing_2",
+ "source": "input/BVH/Animazoo/Dancing - Break Dancing 2.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.01024,
+ "joints": 24
+}

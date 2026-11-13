@@ -1,0 +1,23 @@
+{
+ "frames": 365,
+ "fps": 60,
+ "seconds": 6.08,
+ "kind": "in place",
+ "root_path_m": 0.068,
+ "travel_m_per_s": 0.001,
+ "turn_deg": -1,
+ "floor_m": -0.0,
+ "jitter_pct": 27.5,
+ "foot_slide": 0.0,
+ "loop_gap_m": 0.008,
+ "score": 100,
+ "issues": [
+  "no root motion (hips locked: plays in place)"
+ ],
+ "name": "Animazoo_waving_1_hand",
+ "source": "input/BVH/Animazoo/waving 1 hand.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.01001,
+ "joints": 24
+}

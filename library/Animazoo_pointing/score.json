@@ -1,0 +1,21 @@
+{
+ "frames": 382,
+ "fps": 60,
+ "seconds": 6.37,
+ "kind": "in place",
+ "root_path_m": 0.555,
+ "travel_m_per_s": 0.007,
+ "turn_deg": 5,
+ "floor_m": -0.0,
+ "jitter_pct": 29.0,
+ "foot_slide": 0.032,
+ "loop_gap_m": 0.015,
+ "score": 98,
+ "issues": [],
+ "name": "Animazoo_pointing",
+ "source": "input/BVH/Animazoo/pointing.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.01001,
+ "joints": 24
+}

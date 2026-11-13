@@ -1,0 +1,24 @@
+{
+ "frames": 1023,
+ "fps": 30,
+ "seconds": 34.1,
+ "kind": "in place",
+ "root_path_m": 8.731,
+ "travel_m_per_s": 0.009,
+ "turn_deg": 2,
+ "floor_m": 0.052,
+ "jitter_pct": 16.7,
+ "foot_slide": 0.0,
+ "loop_gap_m": 0.229,
+ "score": 75,
+ "issues": [
+  "feet float 5 cm above the floor (stick is grounded)",
+  "does not loop (23 cm mean gap between last and first pose)"
+ ],
+ "name": "FreeBVH_skiing",
+ "source": "input/BVH/FreeBVH/skiing.BVH",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22
+}

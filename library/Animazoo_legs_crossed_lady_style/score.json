@@ -1,0 +1,24 @@
+{
+ "frames": 514,
+ "fps": 60,
+ "seconds": 8.57,
+ "kind": "in place",
+ "root_path_m": 0.475,
+ "travel_m_per_s": 0.03,
+ "turn_deg": 4,
+ "floor_m": -0.0,
+ "jitter_pct": 41.8,
+ "foot_slide": 0.019,
+ "loop_gap_m": 0.376,
+ "score": 79,
+ "issues": [
+  "no root motion (hips locked: plays in place)",
+  "does not loop (38 cm mean gap between last and first pose)"
+ ],
+ "name": "Animazoo_legs_crossed_lady_style",
+ "source": "input/BVH/Animazoo/legs crossed lady style.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.01001,
+ "joints": 24
+}

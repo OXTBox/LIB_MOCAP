@@ -1,0 +1,21 @@
+{
+ "frames": 539,
+ "fps": 60,
+ "seconds": 8.98,
+ "kind": "in place",
+ "root_path_m": 0.831,
+ "travel_m_per_s": 0.006,
+ "turn_deg": -1,
+ "floor_m": 0.025,
+ "jitter_pct": 34.3,
+ "foot_slide": 0.038,
+ "loop_gap_m": 0.069,
+ "score": 92,
+ "issues": [],
+ "name": "Animazoo_legs_crossed_man_style",
+ "source": "input/BVH/Animazoo/legs crossed man style.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.01001,
+ "joints": 24
+}

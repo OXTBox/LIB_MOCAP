@@ -1,0 +1,30 @@
+{
+ "frames": 158,
+ "fps": 60,
+ "seconds": 2.63,
+ "kind": "locomotion",
+ "root_path_m": 4.435,
+ "travel_m_per_s": 1.663,
+ "turn_deg": 14,
+ "floor_m": 0.026,
+ "jitter_pct": 32.5,
+ "foot_slide": 0.049,
+ "loop_gap_m": 0.124,
+ "score": 83,
+ "issues": [
+  "does not loop (12 cm mean gap between last and first pose)"
+ ],
+ "name": "Animazoo_Running_-_Jog",
+ "source": "input/BVH/Animazoo/Running - Jog.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.01189,
+ "joints": 24,
+ "cycle": {
+  "from": 28,
+  "to": 53,
+  "seconds": 0.87,
+  "gap_m": 0.059,
+  "travel_m_per_s": 2.217
+ }
+}

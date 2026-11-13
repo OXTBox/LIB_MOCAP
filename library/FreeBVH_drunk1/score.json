@@ -1,0 +1,23 @@
+{
+ "frames": 535,
+ "fps": 30,
+ "seconds": 17.83,
+ "kind": "in place",
+ "root_path_m": 5.131,
+ "travel_m_per_s": 0.238,
+ "turn_deg": -12,
+ "floor_m": 0.005,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.053,
+ "loop_gap_m": 0.244,
+ "score": 77,
+ "issues": [
+  "does not loop (24 cm mean gap between last and first pose)"
+ ],
+ "name": "FreeBVH_drunk1",
+ "source": "input/BVH/FreeBVH/drunk1.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22
+}

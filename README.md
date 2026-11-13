@@ -6,28 +6,45 @@ video into a skeleton animation.
 
 | Path | What it is |
 |---|---|
-| `input/` | Drop captures here: `*_skeleton.glb` (+ the BVH beside it for joint names), one folder per capture |
+| `input/` | Drop captures here: MoCapAnything `*_skeleton.glb` (+ its BVH), or any `.bvh`. Not in git (only Example_1 is) |
 | `library/<name>/` | Made by `mocap_lib.py process`: skinned GLB, full clip, stick clip, `score.json`, `NOTES.md` |
 | `CATALOG.md` | Every clip with kind, length, travel speed, score and issues (generated) |
 | `tools/mocap_lib.py` | `process` input → library, `procwalk` the placeholder walk, `catalog` |
 | `tools/mocap_skin.py` | Skeleton GLB → skinned procedural body GLB (xt3d) + plain-text clip (xTalk) |
+| `tools/bvh.py` | BVH reader: forward kinematics in each file's own rotation order, joint names mapped to Mixamo-style names (Animazoo, Truebones/Poser, CMU, Mixamo) |
 
 ## Workflow
 
 ```
 # 1. put a MoCapAnything result (folder or files) into input/
 python3 -I tools/mocap_lib.py process      # 2. every capture -> library/<name>/, CATALOG.md
+python3 -I tools/mocap_lib.py process --new   #    only what is not in the library yet
 # 3. read CATALOG.md; write what you notice in library/<name>/NOTES.md (kept forever)
 ```
 
-**Stick clip** (`<name>_stick.txt`, what Vibecode3D games use): the minimal look. 25 joints,
-no fingers, lines only. In place (hips over 0,0), turned to face +Z every frame, feet on
-y = 0, y up, metres. Header: `fps`, `frames`, `travel` (forward m/s the game should move the
-figure so the feet don't skate), `names`, `parents`, `edges` (`a-b`, 0-based).
+**Stick clip** (`<name>_stick.txt`, what Vibecode3D games use): the minimal look. Up to 27
+joints (no fingers), lines only, at most 30 fps. In place (hips over 0,0), turned to face +Z
+every frame (the toes settle which way is forward, so mirrored rigs come out right), feet on
+y = 0, y up, metres. **Every clip is scaled to the same body** (hip to ankle 0.85 m, about
+1.75 m tall), whatever units the file used. Header: `fps`, `frames`, `travel` (forward m/s
+the game should move the figure so the feet don't skate), `names`, `parents`, `edges`
+(`a-b`, 0-based), and for walks and runs `cycle,a,b` (1-based frames that loop cleanly) and
+`cycle_travel` (the speed during that cycle). Games should loop the cycle.
 
-**Score** (0-100): minus jitter (mean joint acceleration above 4 m/s²), foot sliding while
-planted, a gap between last and first pose (does not loop), and floating feet. Issues are
-listed in words. Kind: `locomotion`, `turn` or `in place`.
+**Score** (0-100): minus jitter, foot sliding while planted, a gap between last and first
+pose (does not loop), and floating feet. Issues are listed in words. Kind: `locomotion`
+(with its loop cycle), `turn` or `in place`.
+**Jitter** is a noise index that ignores speed, scale and frame rate: for smooth motion the
+wobble about the neighbours' midpoint one frame away is 1/4 of that two frames away; for
+noise they are equal. 0% smooth, 100% noise; over 45% is flagged. Typical: 120 fps captures
+~0%, Animazoo 60 fps 20-45%, near-still poses higher (sensor noise shows when nothing moves).
+
+**Sources in input/ (2026-11-12)**: `BVH/Animazoo` (41 clips) and `BVH/FreeBVH` (Truebones
+free pack, 21; a horse and a hands-only clip are skipped) are processed. `BVH/Conversions`
+(`*.BVH.txt`) are iGame3D's own per-joint rotation tables with no skeleton, so they are not
+read; `WIF/` and `wtf/` are iGame3D formats, not read yet. **Rights**: neither pack states a
+licence (Truebones' readme is a sales note). Fine for local work; settle before shipping
+anything that contains their motion.
 
 **proc_walk**: a procedural placeholder walk on the same 25 joints, with the capture's
 proportions. Feet are planned (60% stance, flat, constant speed back; 40% swing) and the

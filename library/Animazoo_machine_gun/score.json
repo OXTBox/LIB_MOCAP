@@ -1,0 +1,23 @@
+{
+ "frames": 430,
+ "fps": 60,
+ "seconds": 7.17,
+ "kind": "in place",
+ "root_path_m": 0.393,
+ "travel_m_per_s": 0.004,
+ "turn_deg": -12,
+ "floor_m": -0.0,
+ "jitter_pct": 43.6,
+ "foot_slide": 0.002,
+ "loop_gap_m": 0.07,
+ "score": 94,
+ "issues": [
+  "no root motion (hips locked: plays in place)"
+ ],
+ "name": "Animazoo_machine_gun",
+ "source": "input/BVH/Animazoo/machine gun.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.01001,
+ "joints": 24
+}
