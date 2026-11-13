@@ -6,7 +6,7 @@ video into a skeleton animation.
 
 | Path | What it is |
 |---|---|
-| `../LIB_LLMIN/LIB_MOCAP/` | Drop NEW captures here: MoCapAnything `*_skeleton.glb` (+ its BVH), or any `.bvh`. After processing they move to `../LIB_LLMOUT/LIB_MOCAP/` |
+| `../LIB_LLMIN/LIB_MOCAP/` | Drop NEW captures here: MoCapAnything `*_skeleton.glb` (+ its BVH), or any `.bvh`. After processing they move to `../LIB_LLMOUT/Read/LIB_MOCAP/` |
 | `../LIB_BVH/` | The BVH motion library (Animazoo, FreeBVH/Truebones, iGame3D conversions): its own local repo since 2026-11-12 |
 | `input/` | Example_1 (in git) and older inputs (obj, wtf) |
 | `library/<name>/` | Made by `mocap_lib.py process`: skinned GLB, full clip, stick clip, `score.json`, `NOTES.md`. Git keeps only `score.json` and `NOTES.md`, plus the motion files a game uses (see `.gitignore`); rebuild the rest with `process` (about 5 minutes) |
