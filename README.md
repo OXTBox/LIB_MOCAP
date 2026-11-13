@@ -75,7 +75,7 @@ walk as soon as there is one.
 The GLB and BVH disagree on timing (15 vs 30 fps); the BVH's 30 fps matches the video.
 The rig is small: 1.41 m to the top of the head, legs about 0.57 m. Example 1 scored 77:
 no root motion, turns 335° in place, does not loop. Its feet do touch the floor (the
-ankle joints sit 9-13 cm up, as ankles do). Used as the idle clip in Play.Companions (PROMPT_GLAZE project).
+ankle joints sit 9-13 cm up, as ankles do). Used as the idle clip in Play.Amazing_Couple (LIB_GAMES).
 
 ## mocap_skin.py
 
