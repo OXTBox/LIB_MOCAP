@@ -1,0 +1,27 @@
+{
+ "frames": 1129,
+ "fps": 30,
+ "seconds": 37.63,
+ "kind": "in place",
+ "root_path_m": 2.796,
+ "travel_m_per_s": 0.009,
+ "turn_deg": -51,
+ "floor_m": 0.057,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.0,
+ "loop_gap_m": 0.298,
+ "score": 75,
+ "issues": [
+  "turns -51 degrees in place",
+  "feet float 6 cm above the floor (stick is grounded)",
+  "does not loop (30 cm mean gap between last and first pose)",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_pry",
+ "source": "input/BVH/iGame3D/pry.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5
+}

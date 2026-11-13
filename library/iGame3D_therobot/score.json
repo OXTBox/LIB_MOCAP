@@ -1,0 +1,25 @@
+{
+ "frames": 1171,
+ "fps": 30,
+ "seconds": 39.03,
+ "kind": "turn",
+ "root_path_m": 5.436,
+ "travel_m_per_s": 0.068,
+ "turn_deg": -273,
+ "floor_m": 0.006,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.0,
+ "loop_gap_m": 0.067,
+ "score": 95,
+ "issues": [
+  "turns -273 degrees in place",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_therobot",
+ "source": "input/BVH/iGame3D/therobot.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5
+}

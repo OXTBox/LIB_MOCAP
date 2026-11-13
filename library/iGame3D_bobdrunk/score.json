@@ -1,0 +1,26 @@
+{
+ "frames": 529,
+ "fps": 30,
+ "seconds": 17.63,
+ "kind": "in place",
+ "root_path_m": 5.031,
+ "travel_m_per_s": 0.236,
+ "turn_deg": -18,
+ "floor_m": -0.042,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.054,
+ "loop_gap_m": 0.212,
+ "score": 77,
+ "issues": [
+  "feet go 4 cm below the floor",
+  "does not loop (21 cm mean gap between last and first pose)",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_bobdrunk",
+ "source": "input/BVH/iGame3D/bobdrunk.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5
+}

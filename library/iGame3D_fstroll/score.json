@@ -1,0 +1,32 @@
+{
+ "frames": 301,
+ "fps": 30,
+ "seconds": 10.03,
+ "kind": "locomotion",
+ "root_path_m": 4.72,
+ "travel_m_per_s": 0.464,
+ "turn_deg": 4,
+ "floor_m": -0.03,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.111,
+ "loop_gap_m": 0.066,
+ "score": 88,
+ "issues": [
+  "feet go 3 cm below the floor",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_fstroll",
+ "source": "input/BVH/iGame3D/fstroll.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5,
+ "cycle": {
+  "from": 239,
+  "to": 259,
+  "seconds": 0.7,
+  "gap_m": 0.042,
+  "travel_m_per_s": 0.542
+ }
+}

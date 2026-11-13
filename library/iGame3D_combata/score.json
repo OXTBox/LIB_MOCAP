@@ -1,0 +1,28 @@
+{
+ "frames": 379,
+ "fps": 30,
+ "seconds": 12.63,
+ "kind": "in place",
+ "root_path_m": 3.207,
+ "travel_m_per_s": 0.207,
+ "turn_deg": -85,
+ "floor_m": 0.078,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.583,
+ "loop_gap_m": 0.968,
+ "score": 45,
+ "issues": [
+  "turns -85 degrees in place",
+  "feet float 8 cm above the floor (stick is grounded)",
+  "feet slide on 58% of planted frames",
+  "does not loop (97 cm mean gap between last and first pose)",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_combata",
+ "source": "input/BVH/iGame3D/combata.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5
+}

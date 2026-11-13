@@ -1,0 +1,31 @@
+{
+ "frames": 49,
+ "fps": 30,
+ "seconds": 1.63,
+ "kind": "locomotion",
+ "root_path_m": 3.153,
+ "travel_m_per_s": 1.93,
+ "turn_deg": -5,
+ "floor_m": -0.017,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.0,
+ "loop_gap_m": 0.062,
+ "score": 95,
+ "issues": [
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_medrun",
+ "source": "input/BVH/iGame3D/medrun.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5,
+ "cycle": {
+  "from": 2,
+  "to": 47,
+  "seconds": 1.53,
+  "gap_m": 0.035,
+  "travel_m_per_s": 1.968
+ }
+}

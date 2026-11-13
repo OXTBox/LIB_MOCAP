@@ -1,0 +1,25 @@
+{
+ "frames": 1429,
+ "fps": 30,
+ "seconds": 47.63,
+ "kind": "in place",
+ "root_path_m": 7.317,
+ "travel_m_per_s": 0.006,
+ "turn_deg": 21,
+ "floor_m": -0.003,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.073,
+ "loop_gap_m": 0.109,
+ "score": 84,
+ "issues": [
+  "does not loop (11 cm mean gap between last and first pose)",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_gay1",
+ "source": "input/BVH/iGame3D/gay1.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5
+}

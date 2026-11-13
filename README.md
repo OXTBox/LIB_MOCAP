@@ -7,7 +7,7 @@ video into a skeleton animation.
 | Path | What it is |
 |---|---|
 | `input/` | Drop captures here: MoCapAnything `*_skeleton.glb` (+ its BVH), or any `.bvh`. Not in git (only Example_1 is) |
-| `library/<name>/` | Made by `mocap_lib.py process`: skinned GLB, full clip, stick clip, `score.json`, `NOTES.md` |
+| `library/<name>/` | Made by `mocap_lib.py process`: skinned GLB, full clip, stick clip, `score.json`, `NOTES.md`. Git keeps only `score.json` and `NOTES.md`, plus the motion files a game uses (see `.gitignore`); rebuild the rest with `process` (about 5 minutes) |
 | `CATALOG.md` | Every clip with kind, length, travel speed, score and issues (generated) |
 | `tools/mocap_lib.py` | `process` input → library, `procwalk` the placeholder walk, `catalog` |
 | `tools/mocap_skin.py` | Skeleton GLB → skinned procedural body GLB (xt3d) + plain-text clip (xTalk) |
@@ -117,4 +117,4 @@ and logs every bone's world position per frame; poses match `wif.py`'s BVH frame
 engine plays these tables at about 0.1 s a key (twice the originals' speed for most);
 `wif.py` keeps 0.2 s, which matches the surviving originals.
 `input/WIF` was removed after this check (a copy stays in Program Files);
-`input/BVH/Conversions` is still here (18 of its tables exist nowhere else except as BVH).
+`input/BVH/Conversions` was removed too; its 18 tables not in WIF live on only as BVH in `input/BVH/iGame3D`.

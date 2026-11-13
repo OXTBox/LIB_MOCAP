@@ -1,0 +1,26 @@
+{
+ "frames": 817,
+ "fps": 30,
+ "seconds": 27.23,
+ "kind": "in place",
+ "root_path_m": 5.804,
+ "travel_m_per_s": 0.029,
+ "turn_deg": 4,
+ "floor_m": 0.0,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.211,
+ "loop_gap_m": 0.212,
+ "score": 67,
+ "issues": [
+  "feet slide on 21% of planted frames",
+  "does not loop (21 cm mean gap between last and first pose)",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_reachhigh3",
+ "source": "input/BVH/iGame3D/reachhigh3.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5
+}

@@ -1,0 +1,31 @@
+{
+ "frames": 97,
+ "fps": 30,
+ "seconds": 3.23,
+ "kind": "locomotion",
+ "root_path_m": 1.663,
+ "travel_m_per_s": 0.511,
+ "turn_deg": 4,
+ "floor_m": -0.004,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.017,
+ "loop_gap_m": 0.06,
+ "score": 94,
+ "issues": [
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_2zombiesA",
+ "source": "input/BVH/iGame3D/2zombiesA.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5,
+ "cycle": {
+  "from": 51,
+  "to": 71,
+  "seconds": 0.7,
+  "gap_m": 0.062,
+  "travel_m_per_s": 0.544
+ }
+}

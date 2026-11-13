@@ -1,0 +1,32 @@
+{
+ "frames": 259,
+ "fps": 30,
+ "seconds": 8.63,
+ "kind": "locomotion",
+ "root_path_m": 3.909,
+ "travel_m_per_s": 0.446,
+ "turn_deg": -13,
+ "floor_m": -0.028,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.171,
+ "loop_gap_m": 0.12,
+ "score": 76,
+ "issues": [
+  "does not loop (12 cm mean gap between last and first pose)",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_fsntr",
+ "source": "input/BVH/iGame3D/fsntr.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5,
+ "cycle": {
+  "from": 96,
+  "to": 117,
+  "seconds": 0.73,
+  "gap_m": 0.047,
+  "travel_m_per_s": 0.479
+ }
+}

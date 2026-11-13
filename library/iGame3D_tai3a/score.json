@@ -1,0 +1,27 @@
+{
+ "frames": 553,
+ "fps": 30,
+ "seconds": 18.43,
+ "kind": "turn",
+ "root_path_m": 4.021,
+ "travel_m_per_s": 0.016,
+ "turn_deg": 363,
+ "floor_m": -0.065,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.306,
+ "loop_gap_m": 0.035,
+ "score": 81,
+ "issues": [
+  "turns 363 degrees in place",
+  "feet go 7 cm below the floor",
+  "feet slide on 31% of planted frames",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_tai3a",
+ "source": "input/BVH/iGame3D/tai3a.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5
+}

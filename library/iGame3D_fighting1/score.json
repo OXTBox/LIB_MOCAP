@@ -1,0 +1,26 @@
+{
+ "frames": 1399,
+ "fps": 30,
+ "seconds": 46.63,
+ "kind": "in place",
+ "root_path_m": 17.209,
+ "travel_m_per_s": 0.004,
+ "turn_deg": -44,
+ "floor_m": -0.09,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.0,
+ "loop_gap_m": 0.152,
+ "score": 82,
+ "issues": [
+  "feet go 9 cm below the floor",
+  "does not loop (15 cm mean gap between last and first pose)",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_fighting1",
+ "source": "input/BVH/iGame3D/fighting1.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5
+}

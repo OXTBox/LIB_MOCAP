@@ -1,0 +1,33 @@
+{
+ "frames": 235,
+ "fps": 30,
+ "seconds": 7.83,
+ "kind": "locomotion",
+ "root_path_m": 2.956,
+ "travel_m_per_s": 0.348,
+ "turn_deg": 11,
+ "floor_m": -0.027,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.418,
+ "loop_gap_m": 0.133,
+ "score": 59,
+ "issues": [
+  "feet slide on 42% of planted frames",
+  "does not loop (13 cm mean gap between last and first pose)",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_fup1",
+ "source": "input/BVH/iGame3D/fup1.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5,
+ "cycle": {
+  "from": 70,
+  "to": 90,
+  "seconds": 0.7,
+  "gap_m": 0.038,
+  "travel_m_per_s": 0.303
+ }
+}

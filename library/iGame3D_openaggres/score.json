@@ -1,0 +1,32 @@
+{
+ "frames": 121,
+ "fps": 30,
+ "seconds": 4.03,
+ "kind": "locomotion",
+ "root_path_m": 2.848,
+ "travel_m_per_s": 0.648,
+ "turn_deg": -29,
+ "floor_m": -0.02,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.929,
+ "loop_gap_m": 0.066,
+ "score": 65,
+ "issues": [
+  "feet slide on 93% of planted frames",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_openaggres",
+ "source": "input/BVH/iGame3D/openaggres.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5,
+ "cycle": {
+  "from": 17,
+  "to": 57,
+  "seconds": 1.37,
+  "gap_m": 0.046,
+  "travel_m_per_s": 0.618
+ }
+}

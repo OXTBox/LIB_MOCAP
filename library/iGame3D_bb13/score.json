@@ -1,0 +1,33 @@
+{
+ "frames": 79,
+ "fps": 30,
+ "seconds": 2.63,
+ "kind": "locomotion",
+ "root_path_m": 4.03,
+ "travel_m_per_s": 1.496,
+ "turn_deg": 10,
+ "floor_m": -0.058,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.2,
+ "loop_gap_m": 0.211,
+ "score": 68,
+ "issues": [
+  "feet go 6 cm below the floor",
+  "does not loop (21 cm mean gap between last and first pose)",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_bb13",
+ "source": "input/BVH/iGame3D/bb13.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5,
+ "cycle": {
+  "from": 37,
+  "to": 70,
+  "seconds": 1.13,
+  "gap_m": 0.095,
+  "travel_m_per_s": 1.93
+ }
+}

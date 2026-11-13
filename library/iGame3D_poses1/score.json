@@ -1,0 +1,27 @@
+{
+ "frames": 1345,
+ "fps": 30,
+ "seconds": 44.83,
+ "kind": "in place",
+ "root_path_m": 1.859,
+ "travel_m_per_s": 0.006,
+ "turn_deg": 47,
+ "floor_m": 0.001,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.017,
+ "loop_gap_m": 0.112,
+ "score": 87,
+ "issues": [
+  "no root motion (hips locked: plays in place)",
+  "turns 47 degrees in place",
+  "does not loop (11 cm mean gap between last and first pose)",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_poses1",
+ "source": "input/BVH/iGame3D/poses1.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5
+}

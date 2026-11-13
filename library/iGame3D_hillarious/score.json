@@ -1,0 +1,25 @@
+{
+ "frames": 607,
+ "fps": 30,
+ "seconds": 20.23,
+ "kind": "in place",
+ "root_path_m": 7.903,
+ "travel_m_per_s": 0.012,
+ "turn_deg": 10,
+ "floor_m": -0.006,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.339,
+ "loop_gap_m": 0.067,
+ "score": 74,
+ "issues": [
+  "feet slide on 34% of planted frames",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_hillarious",
+ "source": "input/BVH/iGame3D/hillarious.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5
+}

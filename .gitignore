@@ -3,3 +3,16 @@ __pycache__/
 *:Zone.Identifier
 input/*
 !input/Video_To_Mocap_Example_1/
+# library: git keeps the catalog, scores and notes; motion files are rebuilt with
+# `tools/mocap_lib.py process` (and `glb NAME`). Only clips a game uses are kept.
+library/*/*_stick.txt
+library/*/*_clip.txt
+library/*/*_skinned.glb
+!library/proc_walk/proc_walk_stick.txt
+!library/Animazoo_gangster_walk/Animazoo_gangster_walk_stick.txt
+!library/Animazoo_gangster_walk/Animazoo_gangster_walk_skinned.glb
+!library/Animazoo_hands_on_hips/Animazoo_hands_on_hips_stick.txt
+!library/Animazoo_walking_waving/Animazoo_walking_waving_stick.txt
+!library/Animazoo_talking_gesturing/Animazoo_talking_gesturing_stick.txt
+!library/Animazoo_Running_-_Jog/Animazoo_Running_-_Jog_stick.txt
+!library/Video_To_Mocap_Example_1/Video_To_Mocap_Example_1_skinned.glb

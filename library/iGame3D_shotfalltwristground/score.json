@@ -1,0 +1,28 @@
+{
+ "frames": 121,
+ "fps": 30,
+ "seconds": 4.03,
+ "kind": "turn",
+ "root_path_m": 0.515,
+ "travel_m_per_s": 0.086,
+ "turn_deg": 183,
+ "floor_m": 0.345,
+ "jitter_pct": 0.0,
+ "foot_slide": 1.0,
+ "loop_gap_m": 0.779,
+ "score": 45,
+ "issues": [
+  "turns 183 degrees in place",
+  "feet float 35 cm above the floor (stick is grounded)",
+  "feet slide on 100% of planted frames",
+  "does not loop (78 cm mean gap between last and first pose)",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_shotfalltwristground",
+ "source": "input/BVH/iGame3D/shotfalltwristground.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5
+}

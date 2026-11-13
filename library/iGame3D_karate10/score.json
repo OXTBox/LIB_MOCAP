@@ -1,0 +1,28 @@
+{
+ "frames": 1117,
+ "fps": 30,
+ "seconds": 37.23,
+ "kind": "in place",
+ "root_path_m": 7.976,
+ "travel_m_per_s": 0.007,
+ "turn_deg": -55,
+ "floor_m": -0.077,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.576,
+ "loop_gap_m": 0.211,
+ "score": 50,
+ "issues": [
+  "turns -55 degrees in place",
+  "feet go 8 cm below the floor",
+  "feet slide on 58% of planted frames",
+  "does not loop (21 cm mean gap between last and first pose)",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_karate10",
+ "source": "input/BVH/iGame3D/karate10.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5
+}

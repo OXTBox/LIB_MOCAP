@@ -1,0 +1,26 @@
+{
+ "frames": 889,
+ "fps": 30,
+ "seconds": 29.63,
+ "kind": "turn",
+ "root_path_m": 15.076,
+ "travel_m_per_s": 0.077,
+ "turn_deg": 384,
+ "floor_m": -0.004,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.861,
+ "loop_gap_m": 0.047,
+ "score": 67,
+ "issues": [
+  "turns 384 degrees in place",
+  "feet slide on 86% of planted frames",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_boredpace",
+ "source": "input/BVH/iGame3D/boredpace.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5
+}

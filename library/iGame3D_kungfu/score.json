@@ -1,0 +1,27 @@
+{
+ "frames": 2593,
+ "fps": 30,
+ "seconds": 86.43,
+ "kind": "turn",
+ "root_path_m": 16.719,
+ "travel_m_per_s": 0.011,
+ "turn_deg": 1086,
+ "floor_m": -0.037,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.068,
+ "loop_gap_m": 0.094,
+ "score": 86,
+ "issues": [
+  "turns 1086 degrees in place",
+  "feet go 4 cm below the floor",
+  "does not loop (9 cm mean gap between last and first pose)",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_kungfu",
+ "source": "input/BVH/iGame3D/kungfu.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5
+}

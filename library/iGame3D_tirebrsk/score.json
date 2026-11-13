@@ -1,0 +1,33 @@
+{
+ "frames": 109,
+ "fps": 30,
+ "seconds": 3.63,
+ "kind": "locomotion",
+ "root_path_m": 3.994,
+ "travel_m_per_s": 1.098,
+ "turn_deg": 1,
+ "floor_m": -0.062,
+ "jitter_pct": 0.0,
+ "foot_slide": 1.0,
+ "loop_gap_m": 0.048,
+ "score": 67,
+ "issues": [
+  "feet go 6 cm below the floor",
+  "feet slide on 100% of planted frames",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_tirebrsk",
+ "source": "input/BVH/iGame3D/tirebrsk.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5,
+ "cycle": {
+  "from": 17,
+  "to": 64,
+  "seconds": 1.6,
+  "gap_m": 0.027,
+  "travel_m_per_s": 1.127
+ }
+}

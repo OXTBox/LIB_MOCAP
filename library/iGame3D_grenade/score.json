@@ -1,0 +1,25 @@
+{
+ "frames": 349,
+ "fps": 30,
+ "seconds": 11.63,
+ "kind": "in place",
+ "root_path_m": 1.207,
+ "travel_m_per_s": 0.008,
+ "turn_deg": -44,
+ "floor_m": -0.018,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.023,
+ "loop_gap_m": 0.298,
+ "score": 79,
+ "issues": [
+  "does not loop (30 cm mean gap between last and first pose)",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_grenade",
+ "source": "input/BVH/iGame3D/grenade.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5
+}

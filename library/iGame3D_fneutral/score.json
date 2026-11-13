@@ -1,0 +1,33 @@
+{
+ "frames": 151,
+ "fps": 30,
+ "seconds": 5.03,
+ "kind": "locomotion",
+ "root_path_m": 3.54,
+ "travel_m_per_s": 0.702,
+ "turn_deg": -5,
+ "floor_m": -0.027,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.272,
+ "loop_gap_m": 0.084,
+ "score": 76,
+ "issues": [
+  "feet slide on 27% of planted frames",
+  "does not loop (8 cm mean gap between last and first pose)",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_fneutral",
+ "source": "input/BVH/iGame3D/fneutral.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5,
+ "cycle": {
+  "from": 16,
+  "to": 36,
+  "seconds": 0.7,
+  "gap_m": 0.044,
+  "travel_m_per_s": 0.761
+ }
+}

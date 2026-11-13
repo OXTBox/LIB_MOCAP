@@ -1,0 +1,33 @@
+{
+ "frames": 313,
+ "fps": 30,
+ "seconds": 10.43,
+ "kind": "locomotion",
+ "root_path_m": 3.847,
+ "travel_m_per_s": 0.351,
+ "turn_deg": 7,
+ "floor_m": -0.036,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.296,
+ "loop_gap_m": 0.071,
+ "score": 76,
+ "issues": [
+  "feet go 4 cm below the floor",
+  "feet slide on 30% of planted frames",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_neutralwalker",
+ "source": "input/BVH/iGame3D/neutralwalker.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5,
+ "cycle": {
+  "from": 72,
+  "to": 92,
+  "seconds": 0.7,
+  "gap_m": 0.048,
+  "travel_m_per_s": 0.331
+ }
+}

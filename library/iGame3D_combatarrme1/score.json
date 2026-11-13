@@ -1,0 +1,33 @@
+{
+ "frames": 385,
+ "fps": 30,
+ "seconds": 12.83,
+ "kind": "locomotion",
+ "root_path_m": 5.516,
+ "travel_m_per_s": 0.393,
+ "turn_deg": -181,
+ "floor_m": -0.023,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.707,
+ "loop_gap_m": 0.065,
+ "score": 65,
+ "issues": [
+  "turns -181 degrees in place",
+  "feet slide on 71% of planted frames",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_combatarrme1",
+ "source": "input/BVH/iGame3D/combatarrme1.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5,
+ "cycle": {
+  "from": 15,
+  "to": 62,
+  "seconds": 1.6,
+  "gap_m": 0.035,
+  "travel_m_per_s": 0.477
+ }
+}

@@ -1,0 +1,26 @@
+{
+ "frames": 529,
+ "fps": 30,
+ "seconds": 17.63,
+ "kind": "in place",
+ "root_path_m": 5.465,
+ "travel_m_per_s": 0.262,
+ "turn_deg": -15,
+ "floor_m": -0.044,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.227,
+ "loop_gap_m": 0.048,
+ "score": 84,
+ "issues": [
+  "feet go 4 cm below the floor",
+  "feet slide on 23% of planted frames",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_msad1",
+ "source": "input/BVH/iGame3D/msad1.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5
+}

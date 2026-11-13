@@ -1,0 +1,27 @@
+{
+ "frames": 2365,
+ "fps": 30,
+ "seconds": 78.83,
+ "kind": "turn",
+ "root_path_m": 13.133,
+ "travel_m_per_s": 0.032,
+ "turn_deg": -477,
+ "floor_m": -0.012,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.345,
+ "loop_gap_m": 0.161,
+ "score": 60,
+ "issues": [
+  "turns -477 degrees in place",
+  "feet slide on 34% of planted frames",
+  "does not loop (16 cm mean gap between last and first pose)",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_pickup4",
+ "source": "input/BVH/iGame3D/pickup4.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5
+}

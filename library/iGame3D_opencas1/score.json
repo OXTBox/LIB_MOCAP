@@ -1,0 +1,25 @@
+{
+ "frames": 505,
+ "fps": 30,
+ "seconds": 16.83,
+ "kind": "in place",
+ "root_path_m": 3.953,
+ "travel_m_per_s": 0.2,
+ "turn_deg": -16,
+ "floor_m": -0.026,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.267,
+ "loop_gap_m": 0.063,
+ "score": 79,
+ "issues": [
+  "feet slide on 27% of planted frames",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_opencas1",
+ "source": "input/BVH/iGame3D/opencas1.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5
+}

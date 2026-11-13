@@ -1,0 +1,26 @@
+{
+ "frames": 1909,
+ "fps": 30,
+ "seconds": 63.63,
+ "kind": "in place",
+ "root_path_m": 4.835,
+ "travel_m_per_s": 0.002,
+ "turn_deg": 3,
+ "floor_m": 0.367,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.002,
+ "loop_gap_m": 0.123,
+ "score": 81,
+ "issues": [
+  "feet float 37 cm above the floor (stick is grounded)",
+  "does not loop (12 cm mean gap between last and first pose)",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_reception",
+ "source": "input/BVH/iGame3D/reception.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5
+}

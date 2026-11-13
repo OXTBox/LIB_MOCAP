@@ -1,0 +1,25 @@
+{
+ "frames": 73,
+ "fps": 30,
+ "seconds": 2.43,
+ "kind": "in place",
+ "root_path_m": 0.227,
+ "travel_m_per_s": 0.017,
+ "turn_deg": -6,
+ "floor_m": -0.011,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.793,
+ "loop_gap_m": 0.053,
+ "score": 67,
+ "issues": [
+  "feet slide on 79% of planted frames",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_newwalk6",
+ "source": "input/BVH/iGame3D/newwalk6.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5
+}

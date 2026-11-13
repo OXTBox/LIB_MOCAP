@@ -1,0 +1,25 @@
+{
+ "frames": 1573,
+ "fps": 30,
+ "seconds": 52.43,
+ "kind": "in place",
+ "root_path_m": 2.014,
+ "travel_m_per_s": 0.002,
+ "turn_deg": 12,
+ "floor_m": 0.004,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.007,
+ "loop_gap_m": 0.04,
+ "score": 98,
+ "issues": [
+  "no root motion (hips locked: plays in place)",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_percussion1",
+ "source": "input/BVH/iGame3D/percussion1.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5
+}

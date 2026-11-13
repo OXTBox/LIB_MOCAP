@@ -1,0 +1,33 @@
+{
+ "frames": 193,
+ "fps": 30,
+ "seconds": 6.43,
+ "kind": "locomotion",
+ "root_path_m": 2.552,
+ "travel_m_per_s": 0.371,
+ "turn_deg": 3,
+ "floor_m": -0.061,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.417,
+ "loop_gap_m": 0.053,
+ "score": 72,
+ "issues": [
+  "feet go 6 cm below the floor",
+  "feet slide on 42% of planted frames",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_frontcartflip1",
+ "source": "input/BVH/iGame3D/frontcartflip1.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5,
+ "cycle": {
+  "from": 129,
+  "to": 149,
+  "seconds": 0.7,
+  "gap_m": 0.251,
+  "travel_m_per_s": 0.307
+ }
+}

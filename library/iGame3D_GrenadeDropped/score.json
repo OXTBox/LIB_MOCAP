@@ -1,0 +1,26 @@
+{
+ "frames": 79,
+ "fps": 30,
+ "seconds": 2.63,
+ "kind": "in place",
+ "root_path_m": 0.193,
+ "travel_m_per_s": 0.006,
+ "turn_deg": -2,
+ "floor_m": -0.105,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.647,
+ "loop_gap_m": 0.079,
+ "score": 63,
+ "issues": [
+  "feet go 11 cm below the floor",
+  "feet slide on 65% of planted frames",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_GrenadeDropped",
+ "source": "input/BVH/iGame3D/GrenadeDropped.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5
+}

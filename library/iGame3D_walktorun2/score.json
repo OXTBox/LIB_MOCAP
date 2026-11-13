@@ -1,0 +1,33 @@
+{
+ "frames": 79,
+ "fps": 30,
+ "seconds": 2.63,
+ "kind": "locomotion",
+ "root_path_m": 3.511,
+ "travel_m_per_s": 1.288,
+ "turn_deg": -12,
+ "floor_m": -0.061,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.2,
+ "loop_gap_m": 0.13,
+ "score": 73,
+ "issues": [
+  "feet go 6 cm below the floor",
+  "does not loop (13 cm mean gap between last and first pose)",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_walktorun2",
+ "source": "input/BVH/iGame3D/walktorun2.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5,
+ "cycle": {
+  "from": 5,
+  "to": 26,
+  "seconds": 0.73,
+  "gap_m": 0.053,
+  "travel_m_per_s": 1.139
+ }
+}

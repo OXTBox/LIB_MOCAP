@@ -1,0 +1,25 @@
+{
+ "frames": 553,
+ "fps": 30,
+ "seconds": 18.43,
+ "kind": "in place",
+ "root_path_m": 3.02,
+ "travel_m_per_s": 0.004,
+ "turn_deg": -21,
+ "floor_m": -0.064,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.0,
+ "loop_gap_m": 0.041,
+ "score": 98,
+ "issues": [
+  "feet go 6 cm below the floor",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_paintfence",
+ "source": "input/BVH/iGame3D/paintfence.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5
+}

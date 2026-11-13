@@ -1,0 +1,27 @@
+{
+ "frames": 667,
+ "fps": 30,
+ "seconds": 22.23,
+ "kind": "turn",
+ "root_path_m": 6.579,
+ "travel_m_per_s": 0.046,
+ "turn_deg": -182,
+ "floor_m": -0.01,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.333,
+ "loop_gap_m": 0.128,
+ "score": 65,
+ "issues": [
+  "turns -182 degrees in place",
+  "feet slide on 33% of planted frames",
+  "does not loop (13 cm mean gap between last and first pose)",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_servdrink4",
+ "source": "input/BVH/iGame3D/servdrink4.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5
+}

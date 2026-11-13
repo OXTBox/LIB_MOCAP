@@ -1,0 +1,27 @@
+{
+ "frames": 103,
+ "fps": 30,
+ "seconds": 3.43,
+ "kind": "in place",
+ "root_path_m": 0.218,
+ "travel_m_per_s": 0.004,
+ "turn_deg": -8,
+ "floor_m": 0.117,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.714,
+ "loop_gap_m": 0.041,
+ "score": 63,
+ "issues": [
+  "no root motion (hips locked: plays in place)",
+  "feet float 12 cm above the floor (stick is grounded)",
+  "feet slide on 71% of planted frames",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_rightfoothopleftlegup",
+ "source": "input/BVH/iGame3D/rightfoothopleftlegup.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5
+}

@@ -1,0 +1,24 @@
+{
+ "frames": 805,
+ "fps": 30,
+ "seconds": 26.83,
+ "kind": "in place",
+ "root_path_m": 5.474,
+ "travel_m_per_s": 0.186,
+ "turn_deg": -4,
+ "floor_m": 0.007,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.007,
+ "loop_gap_m": 0.063,
+ "score": 95,
+ "issues": [
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_zombiemummy",
+ "source": "input/BVH/iGame3D/zombiemummy.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5
+}

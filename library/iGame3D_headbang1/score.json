@@ -1,0 +1,25 @@
+{
+ "frames": 1483,
+ "fps": 30,
+ "seconds": 49.43,
+ "kind": "in place",
+ "root_path_m": 8.56,
+ "travel_m_per_s": 0.013,
+ "turn_deg": 44,
+ "floor_m": -0.021,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.09,
+ "loop_gap_m": 0.093,
+ "score": 85,
+ "issues": [
+  "does not loop (9 cm mean gap between last and first pose)",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_headbang1",
+ "source": "input/BVH/iGame3D/headbang1.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5
+}

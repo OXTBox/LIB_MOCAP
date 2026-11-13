@@ -1,0 +1,33 @@
+{
+ "frames": 211,
+ "fps": 30,
+ "seconds": 7.03,
+ "kind": "locomotion",
+ "root_path_m": 3.707,
+ "travel_m_per_s": 0.514,
+ "turn_deg": 6,
+ "floor_m": -0.046,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.375,
+ "loop_gap_m": 0.064,
+ "score": 72,
+ "issues": [
+  "feet go 5 cm below the floor",
+  "feet slide on 38% of planted frames",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_fwlk1",
+ "source": "input/BVH/iGame3D/fwlk1.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5,
+ "cycle": {
+  "from": 123,
+  "to": 170,
+  "seconds": 1.6,
+  "gap_m": 0.017,
+  "travel_m_per_s": 0.558
+ }
+}

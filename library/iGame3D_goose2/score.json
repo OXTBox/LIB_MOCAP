@@ -1,0 +1,33 @@
+{
+ "frames": 829,
+ "fps": 30,
+ "seconds": 27.63,
+ "kind": "locomotion",
+ "root_path_m": 10.756,
+ "travel_m_per_s": 0.386,
+ "turn_deg": 4,
+ "floor_m": -0.039,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.231,
+ "loop_gap_m": 0.06,
+ "score": 82,
+ "issues": [
+  "feet go 4 cm below the floor",
+  "feet slide on 23% of planted frames",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_goose2",
+ "source": "input/BVH/iGame3D/goose2.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5,
+ "cycle": {
+  "from": 622,
+  "to": 643,
+  "seconds": 0.73,
+  "gap_m": 0.052,
+  "travel_m_per_s": 0.344
+ }
+}

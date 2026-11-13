@@ -1,0 +1,33 @@
+{
+ "frames": 175,
+ "fps": 30,
+ "seconds": 5.83,
+ "kind": "locomotion",
+ "root_path_m": 4.875,
+ "travel_m_per_s": 0.834,
+ "turn_deg": -10,
+ "floor_m": -0.107,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.375,
+ "loop_gap_m": 0.05,
+ "score": 75,
+ "issues": [
+  "feet go 11 cm below the floor",
+  "feet slide on 38% of planted frames",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_skateboard11",
+ "source": "input/BVH/iGame3D/skateboard11.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5,
+ "cycle": {
+  "from": 55,
+  "to": 75,
+  "seconds": 0.7,
+  "gap_m": 0.018,
+  "travel_m_per_s": 0.668
+ }
+}

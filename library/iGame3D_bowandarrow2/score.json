@@ -1,0 +1,26 @@
+{
+ "frames": 715,
+ "fps": 30,
+ "seconds": 23.83,
+ "kind": "in place",
+ "root_path_m": 1.806,
+ "travel_m_per_s": 0.017,
+ "turn_deg": -32,
+ "floor_m": -0.164,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.0,
+ "loop_gap_m": 0.309,
+ "score": 80,
+ "issues": [
+  "feet go 16 cm below the floor",
+  "does not loop (31 cm mean gap between last and first pose)",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_bowandarrow2",
+ "source": "input/BVH/iGame3D/bowandarrow2.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5
+}

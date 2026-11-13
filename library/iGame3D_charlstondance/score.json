@@ -1,0 +1,24 @@
+{
+ "frames": 211,
+ "fps": 30,
+ "seconds": 7.03,
+ "kind": "in place",
+ "root_path_m": 1.279,
+ "travel_m_per_s": 0.02,
+ "turn_deg": -11,
+ "floor_m": 0.012,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.054,
+ "loop_gap_m": 0.051,
+ "score": 94,
+ "issues": [
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_charlstondance",
+ "source": "input/BVH/iGame3D/charlstondance.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5
+}

@@ -1,0 +1,26 @@
+{
+ "frames": 883,
+ "fps": 30,
+ "seconds": 29.43,
+ "kind": "in place",
+ "root_path_m": 1.524,
+ "travel_m_per_s": 0.004,
+ "turn_deg": -3,
+ "floor_m": 0.32,
+ "jitter_pct": 0.0,
+ "foot_slide": 0.167,
+ "loop_gap_m": 0.146,
+ "score": 68,
+ "issues": [
+  "feet float 32 cm above the floor (stick is grounded)",
+  "does not loop (15 cm mean gap between last and first pose)",
+  "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
+ ],
+ "name": "iGame3D_swimbreast",
+ "source": "input/BVH/iGame3D/swimbreast.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 0.02419,
+ "joints": 22,
+ "upsampled_from_fps": 5
+}
