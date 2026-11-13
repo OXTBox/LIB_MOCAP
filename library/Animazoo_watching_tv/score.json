@@ -16,7 +16,7 @@
   "does not loop (34 cm mean gap between last and first pose)"
  ],
  "name": "Animazoo_watching_tv",
- "source": "input/BVH/Animazoo/watching tv.bvh",
+ "source": "../LIB_BVH/Animazoo/watching tv.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.01001,

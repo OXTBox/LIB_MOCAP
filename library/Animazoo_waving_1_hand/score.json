@@ -15,7 +15,7 @@
   "no root motion (hips locked: plays in place)"
  ],
  "name": "Animazoo_waving_1_hand",
- "source": "input/BVH/Animazoo/waving 1 hand.bvh",
+ "source": "../LIB_BVH/Animazoo/waving 1 hand.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.01001,

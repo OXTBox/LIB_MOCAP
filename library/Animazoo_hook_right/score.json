@@ -13,7 +13,7 @@
  "score": 97,
  "issues": [],
  "name": "Animazoo_hook_right",
- "source": "input/BVH/Animazoo/hook right.bvh",
+ "source": "../LIB_BVH/Animazoo/hook right.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.01001,

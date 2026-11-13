@@ -13,7 +13,7 @@
  "score": 98,
  "issues": [],
  "name": "Animazoo_left_jab",
- "source": "input/BVH/Animazoo/left jab.bvh",
+ "source": "../LIB_BVH/Animazoo/left jab.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.01001,

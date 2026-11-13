@@ -1,4 +1,4 @@
-# LIB_MOCAP stick clip: from input/BVH/Animazoo/talking gesturing.bvh
+# LIB_MOCAP stick clip: from ../LIB_BVH/Animazoo/talking gesturing.bvh
 name,Animazoo_talking_gesturing
 fps,30
 frames,240

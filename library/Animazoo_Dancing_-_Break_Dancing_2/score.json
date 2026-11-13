@@ -15,7 +15,7 @@
   "does not loop (46 cm mean gap between last and first pose)"
  ],
  "name": "Animazoo_Dancing_-_Break_Dancing_2",
- "source": "input/BVH/Animazoo/Dancing - Break Dancing 2.bvh",
+ "source": "../LIB_BVH/Animazoo/Dancing - Break Dancing 2.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.01024,

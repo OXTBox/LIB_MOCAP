@@ -15,7 +15,7 @@
   "no root motion (hips locked: plays in place)"
  ],
  "name": "Animazoo_hands_on_hips",
- "source": "input/BVH/Animazoo/hands on hips.bvh",
+ "source": "../LIB_BVH/Animazoo/hands on hips.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.01001,

@@ -15,7 +15,7 @@
   "feet float 3 cm above the floor (stick is grounded)"
  ],
  "name": "FreeBVH_MIKE8",
- "source": "input/BVH/FreeBVH/MIKE8.bvh",
+ "source": "../LIB_BVH/FreeBVH/MIKE8.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.02419,

@@ -1,4 +1,4 @@
-# LIB_MOCAP stick clip: from input/BVH/Animazoo/walking waving.bvh
+# LIB_MOCAP stick clip: from ../LIB_BVH/Animazoo/walking waving.bvh
 name,Animazoo_walking_waving
 fps,30
 frames,204

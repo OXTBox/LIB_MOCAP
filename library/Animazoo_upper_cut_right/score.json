@@ -13,7 +13,7 @@
  "score": 92,
  "issues": [],
  "name": "Animazoo_upper_cut_right",
- "source": "input/BVH/Animazoo/upper cut right.bvh",
+ "source": "../LIB_BVH/Animazoo/upper cut right.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.01001,

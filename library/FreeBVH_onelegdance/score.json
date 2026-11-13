@@ -18,7 +18,7 @@
   "does not loop (28 cm mean gap between last and first pose)"
  ],
  "name": "FreeBVH_onelegdance",
- "source": "input/BVH/FreeBVH/onelegdance.BVH",
+ "source": "../LIB_BVH/FreeBVH/onelegdance.BVH",
  "procedural": false,
  "format": "bvh",
  "scale": 0.02419,

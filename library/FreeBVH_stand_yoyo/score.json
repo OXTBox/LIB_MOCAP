@@ -17,7 +17,7 @@
   "jittery (54% noise)"
  ],
  "name": "FreeBVH_stand_yoyo",
- "source": "input/BVH/FreeBVH/stand_yoyo.BVH",
+ "source": "../LIB_BVH/FreeBVH/stand_yoyo.BVH",
  "procedural": false,
  "format": "bvh",
  "scale": 0.02419,

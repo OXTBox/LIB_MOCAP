@@ -13,7 +13,7 @@
  "score": 92,
  "issues": [],
  "name": "Animazoo_legs_crossed_man_style",
- "source": "input/BVH/Animazoo/legs crossed man style.bvh",
+ "source": "../LIB_BVH/Animazoo/legs crossed man style.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.01001,

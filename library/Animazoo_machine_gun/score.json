@@ -15,7 +15,7 @@
   "no root motion (hips locked: plays in place)"
  ],
  "name": "Animazoo_machine_gun",
- "source": "input/BVH/Animazoo/machine gun.bvh",
+ "source": "../LIB_BVH/Animazoo/machine gun.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.01001,

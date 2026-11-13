@@ -1010,5 +1010,5 @@ Notes column: first line of library/<name>/NOTES.md (written by hand, never over
 
 | Name | Source | Why |
 |---|---|---|
-| FreeBVH_handJive | input/BVH/FreeBVH/handJive.BVH | missing Hips, LeftUpLeg, RightUpLeg, LeftLeg, RightLeg, LeftFoot, RightFoot, Head |
-| FreeBVH_horseruncycle | input/BVH/FreeBVH/horseruncycle.bvh | not a human (has a tail) |
+| FreeBVH_handJive | ../LIB_BVH/FreeBVH/handJive.BVH | missing Hips, LeftUpLeg, RightUpLeg, LeftLeg, RightLeg, LeftFoot, RightFoot, Head |
+| FreeBVH_horseruncycle | ../LIB_BVH/FreeBVH/horseruncycle.bvh | not a human (has a tail) |

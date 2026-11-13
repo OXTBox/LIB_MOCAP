@@ -13,7 +13,7 @@
  "score": 96,
  "issues": [],
  "name": "Animazoo_gangster_walk",
- "source": "input/BVH/Animazoo/gangster walk.bvh",
+ "source": "../LIB_BVH/Animazoo/gangster walk.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.01001,

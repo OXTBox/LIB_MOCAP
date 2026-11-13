@@ -15,7 +15,7 @@
   "turns -1091 degrees in place"
  ],
  "name": "Animazoo_Jumping_-_Hopping",
- "source": "input/BVH/Animazoo/Jumping - Hopping.bvh",
+ "source": "../LIB_BVH/Animazoo/Jumping - Hopping.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.01189,

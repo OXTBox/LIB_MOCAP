@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """mocap_lib.py - the LIB_MOCAP library: process captures, score them, keep a catalog.
 
-    python3 -I tools/mocap_lib.py process [NAME ...]   every capture in input/ (or just NAME)
+    python3 -I tools/mocap_lib.py process [NAME ...]   every capture in LIB_LLMIN/LIB_MOCAP, input/ and ../LIB_BVH (or just NAME)
     python3 -I tools/mocap_lib.py process --new        only captures not yet in library/
     python3 -I tools/mocap_lib.py procwalk             the procedural placeholder walk
     python3 -I tools/mocap_lib.py catalog              rebuild CATALOG.md from library/
@@ -37,7 +37,11 @@ import json, math, os, re, shutil, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-INPUT = os.path.join(ROOT, 'input')
+INPUT = os.path.join(ROOT, 'input')                    # Example_1 and older inputs
+PROJECTS = os.path.dirname(ROOT)
+INBOX = os.path.join(PROJECTS, 'LIB_LLMIN', 'LIB_MOCAP')  # new captures arrive here
+BVH_LIB = os.path.join(PROJECTS, 'LIB_BVH')                # the motion library (Animazoo, FreeBVH, iGame3D)
+SOURCES = (INBOX, INPUT, BVH_LIB)
 LIBRARY = os.path.join(ROOT, 'library')
 sys.path.insert(0, HERE)
 import mocap_skin  # noqa: E402
@@ -255,15 +259,23 @@ def resample(frames, fps, target=STICK_FPS):
 
 # ---------------------------------------------------------------------------- process
 def captures():
+    """every capture in the sources: LIB_LLMIN/LIB_MOCAP (new), input/, ../LIB_BVH.
+    A BVH clip is named <its folder>_<file>, wherever the folder lives."""
     found = []
-    if not os.path.isdir(INPUT):
-        return found
-    for dirpath, _, files in os.walk(INPUT):
+    for src in SOURCES:
+        if os.path.isdir(src):
+            found += captures_in(src)
+    return found
+
+
+def captures_in(root):
+    found = []
+    for dirpath, _, files in os.walk(root):
         has_glb = any(f.lower().endswith('.glb') for f in files)
         for f in sorted(files):
             low = f.lower()
             if low.endswith('.glb'):
-                rel = os.path.relpath(dirpath, INPUT)
+                rel = os.path.relpath(dirpath, root)
                 name = rel.split(os.sep)[0] if rel != '.' else re.sub(r'_skeleton$', '', f[:-4])
             elif low.endswith('.bvh') and not has_glb:
                 name = os.path.basename(dirpath) + '_' + os.path.splitext(f)[0]
@@ -490,7 +502,7 @@ def main(argv=None):
         if '--new' in a:
             todo = [(n, g) for n, g in todo if not os.path.exists(os.path.join(LIBRARY, n, 'score.json'))]
         if not todo:
-            print('nothing to do in %s' % INPUT)
+            print('nothing to do in %s' % ', '.join(SOURCES))
         skipped = load_skipped()
         for n, g in todo:
             try:

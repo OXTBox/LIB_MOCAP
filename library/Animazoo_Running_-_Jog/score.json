@@ -15,7 +15,7 @@
   "does not loop (12 cm mean gap between last and first pose)"
  ],
  "name": "Animazoo_Running_-_Jog",
- "source": "input/BVH/Animazoo/Running - Jog.bvh",
+ "source": "../LIB_BVH/Animazoo/Running - Jog.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.01189,

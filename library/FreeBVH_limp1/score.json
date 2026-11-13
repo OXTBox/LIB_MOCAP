@@ -15,7 +15,7 @@
   "feet slide on 100% of planted frames"
  ],
  "name": "FreeBVH_limp1",
- "source": "input/BVH/FreeBVH/limp1.bvh",
+ "source": "../LIB_BVH/FreeBVH/limp1.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.02419,

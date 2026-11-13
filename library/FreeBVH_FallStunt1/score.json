@@ -17,7 +17,7 @@
   "does not loop (231 cm mean gap between last and first pose)"
  ],
  "name": "FreeBVH_FallStunt1",
- "source": "input/BVH/FreeBVH/FallStunt1.bvh",
+ "source": "../LIB_BVH/FreeBVH/FallStunt1.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.02419,

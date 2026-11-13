@@ -15,7 +15,7 @@
   "feet go 16 cm below the floor"
  ],
  "name": "FreeBVH_rowingboat",
- "source": "input/BVH/FreeBVH/rowingboat.BVH",
+ "source": "../LIB_BVH/FreeBVH/rowingboat.BVH",
  "procedural": false,
  "format": "bvh",
  "scale": 0.02419,

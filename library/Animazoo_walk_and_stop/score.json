@@ -13,7 +13,7 @@
  "score": 96,
  "issues": [],
  "name": "Animazoo_walk_and_stop",
- "source": "input/BVH/Animazoo/walk and stop.bvh",
+ "source": "../LIB_BVH/Animazoo/walk and stop.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.01001,

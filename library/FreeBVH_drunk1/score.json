@@ -15,7 +15,7 @@
   "does not loop (24 cm mean gap between last and first pose)"
  ],
  "name": "FreeBVH_drunk1",
- "source": "input/BVH/FreeBVH/drunk1.bvh",
+ "source": "../LIB_BVH/FreeBVH/drunk1.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.02419,

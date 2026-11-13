@@ -15,7 +15,7 @@
   "does not loop (20 cm mean gap between last and first pose)"
  ],
  "name": "FreeBVH_walkslip1",
- "source": "input/BVH/FreeBVH/walkslip1.bvh",
+ "source": "../LIB_BVH/FreeBVH/walkslip1.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.02419,

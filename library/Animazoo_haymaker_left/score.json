@@ -15,7 +15,7 @@
   "does not loop (10 cm mean gap between last and first pose)"
  ],
  "name": "Animazoo_haymaker_left",
- "source": "input/BVH/Animazoo/haymaker left.bvh",
+ "source": "../LIB_BVH/Animazoo/haymaker left.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.01001,

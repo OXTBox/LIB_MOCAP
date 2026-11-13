@@ -16,7 +16,7 @@
   "does not loop (16 cm mean gap between last and first pose)"
  ],
  "name": "FreeBVH_BoxerWarming1",
- "source": "input/BVH/FreeBVH/BoxerWarming1.bvh",
+ "source": "../LIB_BVH/FreeBVH/BoxerWarming1.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.02419,

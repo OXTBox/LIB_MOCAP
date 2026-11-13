@@ -15,7 +15,7 @@
   "no root motion (hips locked: plays in place)"
  ],
  "name": "Animazoo_jab_right",
- "source": "input/BVH/Animazoo/jab right.bvh",
+ "source": "../LIB_BVH/Animazoo/jab right.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.01001,

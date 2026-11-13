@@ -13,7 +13,7 @@
  "score": 98,
  "issues": [],
  "name": "Animazoo_haymaker_right",
- "source": "input/BVH/Animazoo/haymaker right.bvh",
+ "source": "../LIB_BVH/Animazoo/haymaker right.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.01001,

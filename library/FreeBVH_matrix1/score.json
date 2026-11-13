@@ -15,7 +15,7 @@
   "no root motion (hips locked: plays in place)"
  ],
  "name": "FreeBVH_matrix1",
- "source": "input/BVH/FreeBVH/matrix1.bvh",
+ "source": "../LIB_BVH/FreeBVH/matrix1.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.02419,

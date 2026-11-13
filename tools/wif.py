@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """wif.py - turn iGame3D animation tables back into BVH files.
 
-    python3 -I tools/wif.py [--out input/BVH/iGame3D] [--include-originals]
+    python3 -I tools/wif.py [--out ../LIB_BVH/iGame3D] [--include-originals]
 
 In 2008 iGame3D converted the Truebones BVH library (20-bone Poser-style rig) into its own
 tables, kept in two places that hold the same data:
-  input/BVH/Conversions/*/*.BVH.txt   one animation per file
+  ../LIB_BVH/Conversions/*/*.BVH.txt   one animation per file
   input/WIF/*.wtf                     iGame3D models with many animations each (#Animations)
 A table is: name, key count, then per key and bone "<frame>,0.1" and
   morph=bone,tx,ty,tz,rx,ry,rz
@@ -13,7 +13,7 @@ bone 0..19 in Truebones BVH order (hip first); t = BVH position * 0.005263 (root
 r = iGame3D's own Euler angles in degrees.
 
 The rotation convention was fitted against the 16 tables whose original Truebones BVH is
-still in input/BVH/FreeBVH: R = Rz * Ry * Rx (BVH "Zrotation Yrotation Xrotation"), all
+still in ../LIB_BVH/FreeBVH: R = Rz * Ry * Rx (BVH "Zrotation Yrotation Xrotation"), all
 signs positive; mean joint error about 1% of body height. The tables keep every 6th
 frame of the 30 fps originals, so a key is 0.2 s (the "0.1" in the file is not the timing).
 
@@ -26,6 +26,7 @@ import argparse, glob, os, re, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 INPUT = os.path.join(ROOT, 'input')
+BVH_LIB = os.path.join(os.path.dirname(ROOT), 'LIB_BVH')   # the BVH library moved out (2026-11-12)
 SCALE = 0.005263
 KEY_TIME = 0.2
 
@@ -137,7 +138,7 @@ def to_bvh(keys):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument('--out', default=os.path.join(INPUT, 'BVH', 'iGame3D'))
+    ap.add_argument('--out', default=os.path.join(BVH_LIB, 'iGame3D'))
     ap.add_argument('--include-originals', action='store_true')
     a = ap.parse_args(argv)
     found = {}                                    # base name (lower) -> (name, keys, source)
@@ -149,7 +150,7 @@ def main(argv=None):
         for name, keys in blocks(open(p, errors='replace').read()):
             found.setdefault(base(name).lower(), (base(name), keys, os.path.relpath(p, INPUT)))
     originals = set()
-    for p in glob.glob(os.path.join(INPUT, 'BVH', '*', '*')):
+    for p in glob.glob(os.path.join(BVH_LIB, '*', '*')):
         if p.lower().endswith('.bvh') and not p.startswith(a.out):
             originals.add(os.path.splitext(os.path.basename(p))[0].lower())
     os.makedirs(a.out, exist_ok=True)

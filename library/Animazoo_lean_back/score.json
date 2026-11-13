@@ -16,7 +16,7 @@
   "does not loop (15 cm mean gap between last and first pose)"
  ],
  "name": "Animazoo_lean_back",
- "source": "input/BVH/Animazoo/lean back.bvh",
+ "source": "../LIB_BVH/Animazoo/lean back.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.01001,

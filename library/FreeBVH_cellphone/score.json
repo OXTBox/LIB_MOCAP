@@ -16,7 +16,7 @@
   "jittery (46% noise)"
  ],
  "name": "FreeBVH_cellphone",
- "source": "input/BVH/FreeBVH/cellphone.BVH",
+ "source": "../LIB_BVH/FreeBVH/cellphone.BVH",
  "procedural": false,
  "format": "bvh",
  "scale": 0.02419,

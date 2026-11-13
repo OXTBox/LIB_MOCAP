@@ -17,7 +17,7 @@
   "does not loop (40 cm mean gap between last and first pose)"
  ],
  "name": "FreeBVH_floordancers21",
- "source": "input/BVH/FreeBVH/floordancers21.BVH",
+ "source": "../LIB_BVH/FreeBVH/floordancers21.BVH",
  "procedural": false,
  "format": "bvh",
  "scale": 0.02419,

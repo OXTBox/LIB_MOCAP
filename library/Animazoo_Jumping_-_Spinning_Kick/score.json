@@ -16,7 +16,7 @@
   "does not loop (36 cm mean gap between last and first pose)"
  ],
  "name": "Animazoo_Jumping_-_Spinning_Kick",
- "source": "input/BVH/Animazoo/Jumping - Spinning Kick.bvh",
+ "source": "../LIB_BVH/Animazoo/Jumping - Spinning Kick.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.01024,

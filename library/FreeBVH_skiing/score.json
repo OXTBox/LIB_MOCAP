@@ -16,7 +16,7 @@
   "does not loop (23 cm mean gap between last and first pose)"
  ],
  "name": "FreeBVH_skiing",
- "source": "input/BVH/FreeBVH/skiing.BVH",
+ "source": "../LIB_BVH/FreeBVH/skiing.BVH",
  "procedural": false,
  "format": "bvh",
  "scale": 0.02419,

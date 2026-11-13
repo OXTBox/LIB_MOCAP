@@ -13,7 +13,7 @@
  "score": 97,
  "issues": [],
  "name": "Animazoo_On_the_phone",
- "source": "input/BVH/Animazoo/On the phone.bvh",
+ "source": "../LIB_BVH/Animazoo/On the phone.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.01001,

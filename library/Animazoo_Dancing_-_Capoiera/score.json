@@ -17,7 +17,7 @@
   "does not loop (18 cm mean gap between last and first pose)"
  ],
  "name": "Animazoo_Dancing_-_Capoiera",
- "source": "input/BVH/Animazoo/Dancing - Capoiera.bvh",
+ "source": "../LIB_BVH/Animazoo/Dancing - Capoiera.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.01091,

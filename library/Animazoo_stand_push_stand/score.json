@@ -13,7 +13,7 @@
  "score": 98,
  "issues": [],
  "name": "Animazoo_stand_push_stand",
- "source": "input/BVH/Animazoo/stand push stand.bvh",
+ "source": "../LIB_BVH/Animazoo/stand push stand.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.01001,

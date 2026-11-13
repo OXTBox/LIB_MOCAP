@@ -17,7 +17,7 @@
   "does not loop (10 cm mean gap between last and first pose)"
  ],
  "name": "FreeBVH_wall",
- "source": "input/BVH/FreeBVH/wall.BVH",
+ "source": "../LIB_BVH/FreeBVH/wall.BVH",
  "procedural": false,
  "format": "bvh",
  "scale": 0.02419,

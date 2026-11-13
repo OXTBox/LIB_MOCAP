@@ -16,7 +16,7 @@
   "does not loop (20 cm mean gap between last and first pose)"
  ],
  "name": "FreeBVH_whoaholdon",
- "source": "input/BVH/FreeBVH/whoaholdon.BVH",
+ "source": "../LIB_BVH/FreeBVH/whoaholdon.BVH",
  "procedural": false,
  "format": "bvh",
  "scale": 0.02419,

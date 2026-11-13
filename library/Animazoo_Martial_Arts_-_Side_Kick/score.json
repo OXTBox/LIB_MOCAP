@@ -15,7 +15,7 @@
   "does not loop (43 cm mean gap between last and first pose)"
  ],
  "name": "Animazoo_Martial_Arts_-_Side_Kick",
- "source": "input/BVH/Animazoo/Martial Arts - Side Kick.bvh",
+ "source": "../LIB_BVH/Animazoo/Martial Arts - Side Kick.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.01024,

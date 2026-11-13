@@ -17,7 +17,7 @@
   "jittery (71% noise)"
  ],
  "name": "FreeBVH_traffic",
- "source": "input/BVH/FreeBVH/traffic.BVH",
+ "source": "../LIB_BVH/FreeBVH/traffic.BVH",
  "procedural": false,
  "format": "bvh",
  "scale": 0.02419,

@@ -17,7 +17,7 @@
   "timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)"
  ],
  "name": "iGame3D_walkwcup",
- "source": "input/BVH/iGame3D/walkwcup.bvh",
+ "source": "../LIB_BVH/iGame3D/walkwcup.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.02419,

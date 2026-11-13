@@ -13,7 +13,7 @@
  "score": 97,
  "issues": [],
  "name": "Animazoo_hooker_walk",
- "source": "input/BVH/Animazoo/hooker walk.bvh",
+ "source": "../LIB_BVH/Animazoo/hooker walk.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.01001,

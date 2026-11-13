@@ -1,4 +1,4 @@
-# LIB_MOCAP stick clip: from input/BVH/Animazoo/gangster walk.bvh
+# LIB_MOCAP stick clip: from ../LIB_BVH/Animazoo/gangster walk.bvh
 name,Animazoo_gangster_walk
 fps,30
 frames,227

@@ -15,7 +15,7 @@
   "does not loop (40 cm mean gap between last and first pose)"
  ],
  "name": "Animazoo_Jumping_-_fly_kick",
- "source": "input/BVH/Animazoo/Jumping - fly kick.bvh",
+ "source": "../LIB_BVH/Animazoo/Jumping - fly kick.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.01024,

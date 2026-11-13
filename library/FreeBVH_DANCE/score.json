@@ -18,7 +18,7 @@
   "does not loop (10 cm mean gap between last and first pose)"
  ],
  "name": "FreeBVH_DANCE",
- "source": "input/BVH/FreeBVH/DANCE.BVH",
+ "source": "../LIB_BVH/FreeBVH/DANCE.BVH",
  "procedural": false,
  "format": "bvh",
  "scale": 0.02419,

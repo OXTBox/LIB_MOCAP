@@ -13,7 +13,7 @@
  "score": 98,
  "issues": [],
  "name": "Animazoo_cross_right",
- "source": "input/BVH/Animazoo/cross right.bvh",
+ "source": "../LIB_BVH/Animazoo/cross right.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.01001,

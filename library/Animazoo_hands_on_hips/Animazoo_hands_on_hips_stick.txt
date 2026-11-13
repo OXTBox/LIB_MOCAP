@@ -1,4 +1,4 @@
-# LIB_MOCAP stick clip: from input/BVH/Animazoo/hands on hips.bvh
+# LIB_MOCAP stick clip: from ../LIB_BVH/Animazoo/hands on hips.bvh
 name,Animazoo_hands_on_hips
 fps,30
 frames,187

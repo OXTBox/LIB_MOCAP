@@ -13,7 +13,7 @@
  "score": 95,
  "issues": [],
  "name": "Animazoo_walking_waving",
- "source": "input/BVH/Animazoo/walking waving.bvh",
+ "source": "../LIB_BVH/Animazoo/walking waving.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.01001,

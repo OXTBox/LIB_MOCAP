@@ -15,7 +15,7 @@
   "does not loop (34 cm mean gap between last and first pose)"
  ],
  "name": "Animazoo_stand_push",
- "source": "input/BVH/Animazoo/stand push.bvh",
+ "source": "../LIB_BVH/Animazoo/stand push.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.01001,

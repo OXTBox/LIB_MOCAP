@@ -15,7 +15,7 @@
   "does not loop (12 cm mean gap between last and first pose)"
  ],
  "name": "Animazoo_combo_left_southport",
- "source": "input/BVH/Animazoo/combo left southport.bvh",
+ "source": "../LIB_BVH/Animazoo/combo left southport.bvh",
  "procedural": false,
  "format": "bvh",
  "scale": 0.01001,
