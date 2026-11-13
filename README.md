@@ -44,9 +44,16 @@ noise they are equal. 0% smooth, 100% noise; over 45% is flagged. Typical: 120 f
 **Sources in input/ (2026-11-12)**: `BVH/Animazoo` (41 clips) and `BVH/FreeBVH` (Truebones
 free pack, 21; a horse and a hands-only clip are skipped) are processed. `BVH/iGame3D`
 (938 clips) was rebuilt from iGame3D's 2008 tables by `tools/wif.py` (next section); after
-that `WIF/` and `BVH/Conversions/` are no longer needed. **Rights**: neither pack states a
-licence (Truebones' readme is a sales note). Fine for local work; settle before shipping
-anything that contains their motion.
+that `WIF/` and `BVH/Conversions/` are no longer needed. **Rights**: per the owner (2026-11-12),
+Truebones' clips are repackaged from the **CMU Graphics Lab Motion Capture Database**
+(mocap.cs.cmu.edu), so `FreeBVH/` and the 938 `iGame3D/` clips are really CMU motion. CMU's
+data is free to use, commercial games included; credit it ("The data used in this project
+was obtained from mocap.cs.cmu.edu. The database was created with funding from NSF
+EIA-0196217.") and do not resell the raw data as a motion library. Check the current terms
+on mocap.cs.cmu.edu before shipping. `Animazoo/` has no stated licence: local use only
+until settled.
+**Possible upgrade**: CMU's originals (120 fps, true timing) are still published; matching
+our clips to them would replace the estimated 0.2 s-a-key timing of the iGame3D clips.
 
 **proc_walk**: a procedural placeholder walk on the same 25 joints, with the capture's
 proportions. Feet are planned (60% stance, flat, constant speed back; 40% swing) and the
