@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+*:Zone.Identifier
+input/*
+!input/Video_To_Mocap_Example_1/
