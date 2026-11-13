@@ -5,6 +5,7 @@
     python3 -I tools/mocap_lib.py process --new        only captures not yet in library/
     python3 -I tools/mocap_lib.py procwalk             the procedural placeholder walk
     python3 -I tools/mocap_lib.py catalog              rebuild CATALOG.md from library/
+    python3 -I tools/mocap_lib.py glb NAME [NAME ...]  skinned body GLB for xt3d from a BVH clip
 
 A capture is either
   - a MoCapAnything *_skeleton.glb (a BVH beside it supplies the joint names), named after
@@ -314,6 +315,10 @@ def process_bvh(name, path):
     os.makedirs(out, exist_ok=True)
     sc.update({'name': name, 'source': os.path.relpath(path, ROOT), 'procedural': False, 'format': 'bvh',
                'scale': round(k, 5), 'joints': len(snames)})
+    if clip.get('upsampled_from'):
+        sc['upsampled_from_fps'] = clip['upsampled_from']
+        if os.path.basename(os.path.dirname(path)) == 'iGame3D':
+            sc['issues'].append('timing estimated (iGame3D table, 0.2 s a key: about 1 in 3 of these play 2x slow)')
     st, sfps = resample(stick_frames(snames, sub), clip['fps'])
     cycle = None
     if sc['kind'] == 'locomotion':
@@ -470,6 +475,12 @@ def catalog():
 
 def main(argv=None):
     a = sys.argv[1:] if argv is None else argv
+    if a and a[0] == 'glb':
+        for n in a[1:]:
+            sc = json.load(open(os.path.join(LIBRARY, n, 'score.json')))
+            info = mocap_skin.convert_bvh(os.path.join(ROOT, sc['source']), os.path.join(LIBRARY, n, n))
+            print('%s: %d joints, %d keys, %d vertices -> %s' % (n, info['joints'], info['keys'], info['vertices'], info['glb_out']))
+        return 0
     if not a or a[0] not in ('process', 'procwalk', 'catalog'):
         print(__doc__)
         return 2

@@ -11,6 +11,7 @@ video into a skeleton animation.
 | `CATALOG.md` | Every clip with kind, length, travel speed, score and issues (generated) |
 | `tools/mocap_lib.py` | `process` input → library, `procwalk` the placeholder walk, `catalog` |
 | `tools/mocap_skin.py` | Skeleton GLB → skinned procedural body GLB (xt3d) + plain-text clip (xTalk) |
+| `tools/wif.py` | iGame3D animation tables (`input/WIF/*.wtf`, `input/BVH/Conversions/*.BVH.txt`) → real BVH files in `input/BVH/iGame3D/` |
 | `tools/bvh.py` | BVH reader: forward kinematics in each file's own rotation order, joint names mapped to Mixamo-style names (Animazoo, Truebones/Poser, CMU, Mixamo) |
 
 ## Workflow
@@ -19,6 +20,7 @@ video into a skeleton animation.
 # 1. put a MoCapAnything result (folder or files) into input/
 python3 -I tools/mocap_lib.py process      # 2. every capture -> library/<name>/, CATALOG.md
 python3 -I tools/mocap_lib.py process --new   #    only what is not in the library yet
+python3 -I tools/mocap_lib.py glb NAME        #    skinned body GLB for xt3d from a BVH clip (on demand)
 # 3. read CATALOG.md; write what you notice in library/<name>/NOTES.md (kept forever)
 ```
 
@@ -40,9 +42,9 @@ noise they are equal. 0% smooth, 100% noise; over 45% is flagged. Typical: 120 f
 ~0%, Animazoo 60 fps 20-45%, near-still poses higher (sensor noise shows when nothing moves).
 
 **Sources in input/ (2026-11-12)**: `BVH/Animazoo` (41 clips) and `BVH/FreeBVH` (Truebones
-free pack, 21; a horse and a hands-only clip are skipped) are processed. `BVH/Conversions`
-(`*.BVH.txt`) are iGame3D's own per-joint rotation tables with no skeleton, so they are not
-read; `WIF/` and `wtf/` are iGame3D formats, not read yet. **Rights**: neither pack states a
+free pack, 21; a horse and a hands-only clip are skipped) are processed. `BVH/iGame3D`
+(938 clips) was rebuilt from iGame3D's 2008 tables by `tools/wif.py` (next section); after
+that `WIF/` and `BVH/Conversions/` are no longer needed. **Rights**: neither pack states a
 licence (Truebones' readme is a sales note). Fine for local work; settle before shipping
 anything that contains their motion.
 
@@ -87,3 +89,32 @@ python3 -I tools/mocap_skin.py input/<name>/<id>_skeleton.glb --out somewhere/na
   Vibecode3D shapes on the joints.
 
 Standard library only (no numpy).
+
+## iGame3D tables → BVH (tools/wif.py)
+
+In 2008 iGame3D turned the Truebones BVH library (20-bone Poser-style rig) into its own
+tables, stored twice: `input/WIF/*.wtf` (models with `#Animations`, 940 motions) and
+`input/BVH/Conversions/*.BVH.txt` (one per file, 848; 830 are the same as in WIF, 35 files
+are empty stubs). A key per bone: `morph=bone,tx,ty,tz,rx,ry,rz`.
+
+- **Rotation convention**, fitted against the 16 tables whose original Truebones BVH is in
+  `FreeBVH/`: R = Rz · Ry · Rx, all angles as stored. Rebuilt poses match the originals to
+  1-2% of body height; in-between frames (after slerp to 30 fps) to 0.5%.
+- **Position**: root only, BVH units × 0.005263 (undone).
+- **Timing is not stored.** Most tables kept every 6th frame of a 30 fps original (0.2 s a
+  key), some every 6th of 60 fps or every 3rd of 30 fps (0.1 s). `wif.py` uses 0.2 s, right
+  for about 2 in 3; the catalog marks these clips "timing estimated".
+- 958 unique motions: 938 written, 16 skipped (the original BVH is better), 5 were cut off
+  mid-frame in 2008 (aerobdance, cheer, coach2, rebound, walkandwonder: last partial frame
+  dropped), 1 holds a single frame (loadpistol).
+- `bvh.py` slerps any file slower than 24 fps up to 30 fps when reading, so the stick clips
+  of these 5-key-a-second files are smooth.
+
+**Checked against iGame3D itself (2026-11-12).** `tools/ig3d_bones.lua`, run by
+`igame3dvs.exe` in `~/projects/iGame3D_2026_CLAUDE`, plays WIF animations in the engine
+and logs every bone's world position per frame; poses match `wif.py`'s BVH frames to
+0.2-2.5% of leg length, including `bees`, which exists only as an iGame3D table. The
+engine plays these tables at about 0.1 s a key (twice the originals' speed for most);
+`wif.py` keeps 0.2 s, which matches the surviving originals.
+`input/WIF` was removed after this check (a copy stays in Program Files);
+`input/BVH/Conversions` is still here (18 of its tables exist nowhere else except as BVH).

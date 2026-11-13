@@ -425,3 +425,79 @@ def convert(glb, out=None, fps=30, thick=1.0):
 
 if __name__ == '__main__':
     main()
+
+
+# ---------------------------------------------------------------------------- BVH -> skinned GLB
+def convert_bvh(path, out, thick=1.0, leg=0.85):
+    """any BVH -> OUT_skinned.glb: one glTF node per BVH joint (End Sites too), the
+    procedural body skinned to them, rotations as quaternions per key (glTF slerps between
+    keys, so 5-key-a-second iGame3D clips stay smooth). Scaled so the legs are `leg` metres."""
+    import bvh
+    joints, motion, ftime = bvh.parse(open(path, encoding='utf-8', errors='replace').read())
+    names = bvh.load(path, min_fps=0)['names']
+    names = [n if n else 'finger%d' % k for k, n in enumerate(names)]
+    n = len(joints)
+    parent = {k: j['parent'] for k, j in enumerate(joints) if j['parent'] >= 0}
+    # rest pose: offsets only, with the root where the first frame puts it (standing height),
+    # so the bind pose and the animation share one place in space
+    locs = [bvh.local(joints, f) for f in motion]
+    restpos = []
+    for k, j in enumerate(joints):
+        off = locs[0][k][0] if j['parent'] < 0 else j.get('offset', (0, 0, 0))
+        p = j['parent']
+        restpos.append(off if p < 0 else tuple(restpos[p][i] + off[i] for i in range(3)))
+    def d(a, b):
+        return math.dist(restpos[names.index(a)], restpos[names.index(b)])
+    k = leg / ((d('LeftUpLeg', 'LeftLeg') + d('LeftLeg', 'LeftFoot') + d('RightUpLeg', 'RightLeg') + d('RightLeg', 'RightFoot')) / 2)
+    rest = {i: quat_mat((0, 0, 0, 1), tuple(c * k for c in restpos[i])) for i in range(n)}
+    V, I = build_body(list(range(n)), names, parent, rest, thick)
+    w = Writer()
+    nodes = []
+    for i, j in enumerate(joints):
+        node = {'name': names[i], 'translation': [c * k for c in (locs[0][i][0] if j['parent'] < 0 else j.get('offset', (0, 0, 0)))]}
+        kids = [c for c in range(n) if joints[c]['parent'] == i]
+        if kids:
+            node['children'] = kids
+        nodes.append(node)
+    P = w.add('f', [v[0] for v in V], 'VEC3', 5126, 34962, minmax=True)
+    N = w.add('f', [v[1] for v in V], 'VEC3', 5126, 34962)
+    C = w.add('B', [v[2] for v in V], 'VEC4', 5121, 34962)
+    w.accs[C]['normalized'] = True
+    J = w.add('H', [[v[3][0][0], v[3][0][1], 0, 0] for v in V], 'VEC4', 5123, 34962)
+    W = w.add('f', [[v[3][1][0], v[3][1][1], 0, 0] for v in V], 'VEC4', 5126, 34962)
+    IDX = w.add('I' if len(V) > 65535 else 'H', I, 'SCALAR', 5125 if len(V) > 65535 else 5123, 34963)
+    IBM = w.add('f', [inv_rigid(rest[i]) for i in range(n)], 'MAT4', 5126)
+    T = w.add('f', [f * ftime for f in range(len(motion))], 'SCALAR', 5126, minmax=True)
+    samplers, channels = [], []
+    for i, j in enumerate(joints):
+        if not j['channels']:
+            continue
+        q = []
+        for L in locs:
+            qq = bvh.m2q(L[i][1])
+            if q and sum(a * b for a, b in zip(q[-1], qq)) < 0:     # keep quaternions continuous
+                qq = tuple(-x for x in qq)
+            q.append(qq)
+        R = w.add('f', q, 'VEC4', 5126)
+        samplers.append({'input': T, 'output': R, 'interpolation': 'LINEAR'})
+        channels.append({'sampler': len(samplers) - 1, 'target': {'node': i, 'path': 'rotation'}})
+        if any(ch.endswith('position') for ch in j['channels']):
+            Tr = w.add('f', [[c * k for c in L[i][0]] for L in locs], 'VEC3', 5126)
+            samplers.append({'input': T, 'output': Tr, 'interpolation': 'LINEAR'})
+            channels.append({'sampler': len(samplers) - 1, 'target': {'node': i, 'path': 'translation'}})
+    body = len(nodes)
+    nodes.append({'name': 'body', 'mesh': 0, 'skin': 0})
+    gl = {
+        'asset': {'version': '2.0', 'generator': 'LIB_MOCAP mocap_skin.py (BVH)'},
+        'scene': 0, 'scenes': [{'nodes': [0, body]}], 'nodes': nodes,
+        'meshes': [{'name': 'body', 'primitives': [{'attributes': {'POSITION': P, 'NORMAL': N, 'COLOR_0': C,
+                                                                   'JOINTS_0': J, 'WEIGHTS_0': W},
+                                                    'indices': IDX, 'material': 0}]}],
+        'materials': [{'name': 'body', 'pbrMetallicRoughness': {'baseColorFactor': [1, 1, 1, 1],
+                                                                 'metallicFactor': 0, 'roughnessFactor': 1}}],
+        'skins': [{'name': 'mocap', 'joints': list(range(n)), 'inverseBindMatrices': IBM, 'skeleton': 0}],
+        'animations': [{'name': os.path.basename(out), 'samplers': samplers, 'channels': channels}],
+        'accessors': w.accs, 'bufferViews': w.views, 'buffers': [{'byteLength': len(w.bin)}],
+    }
+    write_glb(out + '_skinned.glb', gl, w.bin)
+    return {'glb_out': out + '_skinned.glb', 'joints': n, 'keys': len(motion), 'vertices': len(V)}
