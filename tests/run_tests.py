@@ -61,6 +61,25 @@ def main():
           and close(pos[1], (1, 12, 3)) and close(pos[2], (1, 17, 3)), pos)
     frame = list(motion[1]); frame[5] = 90         # turn the root 90 degrees about Y: still straight up
     check('a turn about Y keeps a vertical spine vertical', close(bvh.fk(joints, frame)[2], (1, 17, 3)))
+    # wtf_anim (A-85): a model's own rig and animations, from officer.wtf when it is there
+    import glob as _g, math as _m
+    import wtf_anim
+    off = os.path.join(wtf_anim.DEADDAYS, 'officer.wtf')
+    if os.path.exists(off):
+        rig, anims = wtf_anim.read_model(off)
+        check('officer: 13 bones, LLgL hangs from LegL, ArmR joint is vertex 394 (shoulder)',
+              len(rig['names']) == 13 and rig['parent'][0] == 1 and abs(rig['joints'][12][1] - 645.94) < 0.01)
+        die = dict(anims)['Die']
+        fr = wtf_anim.sample(die, 13, 30)
+        J, M, _ = bvh.parse(wtf_anim.bvh_text(rig, fr, 30))
+        rest = bvh.fk(J, [0.0] * len(M[0]))
+        check('officer rest pose: every BVH joint on its joint point', all(
+            _m.dist(rest[i], rig['joints'][rig['names'].index(j['name'])]) < 1e-6
+            for i, j in enumerate(J) if j['name'] and j['name'] != 'root'))
+        head = [j['name'] for j in J].index('head')
+        check('officer Die ends with the head on the floor', abs(bvh.fk(J, M[-1])[head][1]) < 40, bvh.fk(J, M[-1])[head][1])
+    else:
+        print('skip  wtf_anim (no officer.wtf here)')
     return done()
 
 
