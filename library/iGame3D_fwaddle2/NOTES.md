@@ -1,3 +1,0 @@
-# iGame3D_fwaddle2
-
-(one line about the motion, then anything found while using it)
