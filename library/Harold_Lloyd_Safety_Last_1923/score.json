@@ -1,0 +1,26 @@
+{
+ "frames": 222,
+ "fps": 30,
+ "seconds": 7.4,
+ "kind": "in place",
+ "root_path_m": 0.0,
+ "travel_m_per_s": 0.0,
+ "turn_deg": 30,
+ "floor_m": 0.917,
+ "jitter_pct": 3.1,
+ "foot_slide": 0.833,
+ "loop_gap_m": 0.246,
+ "score": 45,
+ "issues": [
+  "no root motion (hips locked: plays in place)",
+  "feet float 92 cm above the floor (stick is grounded)",
+  "feet slide on 83% of planted frames",
+  "does not loop (25 cm mean gap between last and first pose)"
+ ],
+ "name": "Harold_Lloyd_Safety_Last_1923",
+ "source": "../LIB_BVH/Harold_Lloyd/Safety_Last_1923.bvh",
+ "procedural": false,
+ "format": "bvh",
+ "scale": 1.04984,
+ "joints": 25
+}
