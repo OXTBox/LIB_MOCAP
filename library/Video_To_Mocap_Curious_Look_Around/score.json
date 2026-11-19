@@ -1,0 +1,26 @@
+{
+ "frames": 301,
+ "fps": 30.0,
+ "seconds": 10.03,
+ "kind": "turn",
+ "root_path_m": 0.0,
+ "travel_m_per_s": 0.0,
+ "turn_deg": 157,
+ "floor_m": -0.004,
+ "jitter_pct": 2.8,
+ "foot_slide": 0.203,
+ "loop_gap_m": 0.302,
+ "score": 68,
+ "issues": [
+  "no root motion (hips locked: plays in place)",
+  "turns 157 degrees in place",
+  "feet slide on 20% of planted frames",
+  "does not loop (30 cm mean gap between last and first pose)"
+ ],
+ "name": "Video_To_Mocap_Curious_Look_Around",
+ "source": "../LIB_LLMOUT/Read/LIB_MOCAP/Video_To_Mocap_Curious_Look_Around/D0a06d19c-d326-53a4-9d72-a9600deaa733_skeleton.glb",
+ "joints_names_from": "Mixamo 65-joint order",
+ "glb_key_rate": 15.0,
+ "procedural": false,
+ "scale": 1.4878
+}
