@@ -127,3 +127,9 @@ engine plays these tables at about 0.1 s a key (twice the originals' speed for m
 `wif.py` keeps 0.2 s, which matches the surviving originals.
 `input/WIF` was removed after this check (a copy stays in Program Files);
 `../LIB_BVH/Conversions` was removed too; its 18 tables not in WIF live on only as BVH in `../LIB_BVH/iGame3D`.
+
+## Licence
+
+GPL-3.0 (see `LICENSE`), because the xTalk work here is built on the GPL-licensed LiveCode Community 9 engine. Copyright (c) 2026 xAction.
+
+The Python files (`.py`) and other material that is not xTalk are also offered under the MIT licence, Copyright (c) 2026 xAction: you may use them under either licence.
